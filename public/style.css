@@ -107,6 +107,38 @@ input#querybutton {
   background-color: #63baf9;
 }
 
+#chats{
+  position: absolute;
+  left: 250px;
+  margin-top: 70px;
+  column-count: 1;
+}
+#chatnombre{
+  background-color: #d9ffff;
+  border: #63baf9 4px solid;
+  width: 1045px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #63baf9;
+  font-size: 20;
+  height: 30px;
+}
+#chat{
+  background-color: #d9ffff;
+  border: #63baf9 4px solid;
+  width: 1045px;
+  height: 30px;
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
 #products {
   column-count: 3;
   position:absolute;
