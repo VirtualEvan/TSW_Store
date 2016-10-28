@@ -2,9 +2,16 @@
     <title>Plantilla CSS Pixel Perfect 960 (no responsive)</title>
     <link rel="stylesheet" href="public/style.css">
 </head>
+
 <body>
+    <div id="searchbox">
+        <form action="search.php" method="post">
+            <input type="text" id="searchbar" placeholder="Search">
+            <input type="submit" id="searchbutton" value="Search">
+        </form>
+    </div>
     <nav id="mainnavigation">
-      <div class=""><img src="img/icon.svg" height="30" weight="30">TraePaká</div>
+        <div class=""><img src="img/icon.svg" height="30" weight="30">TraePaká</div>
         <ul id="list_nav">
             <li class="">
                 <a class="nav" href=#> Añadir producto </a>
@@ -17,11 +24,7 @@
             </li>
         </ul>
     </nav>
-    <div id="query">
-      <form id="queryform" method="GET">
-        <input type="text" id="querybox" placeholder="Search"><input id="querybutton" type="submit" value="search"></input>
-      </form>
-    </div>
+
     <div id="chats">
         <div id="chatnombre">CHATS</div>
         <div id="chat"><a class="nav2" href=#>chat1</a></div>
