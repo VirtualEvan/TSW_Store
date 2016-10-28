@@ -18,10 +18,51 @@ header {
 
 /* Main distribution */
 
+/* Search box */
+#searchbox{
+  position: absolute;
+  width: 80%;
+  left: 250px;
+  white-space: nowrap;
+
+  position:absolute;
+}
+
+#searchbar{
+  padding-left: 10px;
+  border: none;
+  height: 30px;
+  width: 80%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  position: relative;
+  
+  font-size: 18px;
+  font-family: sans-serif;
+  color: white;
+  background-color: #1A1616;
+}
+
+#searchbutton{
+  position: relative;
+  width: 155px;
+  height: 32px;
+  width: 20%
+  border: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  font-size: 18px;
+  font-family: sans-serif;
+  color: white;
+  background-color: #63baf9;
+}
+
+
+/* Navigation */
 #mainnavigation {
     background-color: #63baf9;
     position: absolute;
-    order: 2;
     display: inline-block;
     border-radius: 8px;
     font-size: 18px;
@@ -29,6 +70,14 @@ header {
     border: none;
     cursor: pointer;
     width: 210px
+}
+
+#list_nav {
+      padding: 0;
+      list-style: none;
+      position: relative;
+      margin-top: 0%;
+      margin-bottom: 10%;
 }
 
 #maincontent {
@@ -53,13 +102,7 @@ footer {
 
 /* Sec distribution */
 
-#list_nav {
-      padding: 0;
-      list-style: none;
-      position: relative;
-      margin-top: 0%;
-      margin-bottom: 10%;
-}
+
 
 .nav:visited, .nav:link {
     box-sizing: border-box;
@@ -84,28 +127,6 @@ footer {
 .nav:hover {
     background-color: rgba(230, 227, 227, 1);
     color: black;
-}
-
-#query{
-  position: absolute;
-  left: 250px;
-}
-form#queryform {
-  height: 30px;
-}
-
-input#querybox {
-  width: 890px;
-  border: none;
-  height: 30px;
-  font-size: 1.3em;
-  background-color: #1A1616;
-}
-
-input#querybutton {
-  width: 155px;
-  height: 30px;
-  background-color: #63baf9;
 }
 
 #chats{

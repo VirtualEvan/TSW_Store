@@ -8,6 +8,13 @@
 </head>
 
 <body>
+    <div id="searchbox">
+      <form action="search.php" method="post">
+        <input type="text" id="searchbar" placeholder="Search">
+        <input type="submit" id="searchbutton" value="Search">
+      </form>
+    </div>
+
     <nav id="mainnavigation">
         <div class=""><img src="img/icon.svg" height="30" weight="30">TraePaká</div>
         <ul id="list_nav">
@@ -23,11 +30,7 @@
         </ul>
 
     </nav>
-    <div id="query">
-      <form id="queryform" method="GET">
-        <input type="text" id="querybox" placeholder="Search"><input id="querybutton" type="submit" value="search"></input>
-      </form>
-    </div>
+
     <div id="products">
         <div id="product">
           <div id="imgproduct"><img src="img/ejemplo.jpg" width="300" heigth="190"></div>
