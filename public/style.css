@@ -80,6 +80,35 @@ header {
     margin-bottom: 10%;
 }
 
+#profile{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: top;
+  background: white;
+  font-weight: normal;
+  line-height: 1.5em;
+  border: 1px solid #63baf9;
+  margin: auto;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  height: 105px;
+  display: inline-block;
+}
+
+#imgprofile{
+ margin-left: 33%;
+}
+
+#linkprofile{
+ margin-left: 10%;
+ text-decoration: none;
+ color: black;
+ font-weight: normal;
+}
+
 #maincontent {
     background-color: red;
     order: 3;
