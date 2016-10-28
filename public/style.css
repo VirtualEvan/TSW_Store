@@ -20,6 +20,7 @@ header {
 
 #mainnavigation {
     background-color: #63baf9;
+    position: absolute;
     order: 2;
     display: inline-block;
     border-radius: 8px;
@@ -84,10 +85,59 @@ footer {
     color: black;
 }
 
+#query{
+  position: absolute;
+  left: 250px;
+}
+form#queryform {
+  height: 30px;
+}
 
+input#querybox {
+  width: 890px;
+  border: none;
+  height: 30px;
+  font-size: 1.3em;
+  background-color: #1A1616;
+}
 
-#product {}
+input#querybutton {
+  width: 155px;
+  height: 30px;
+  background-color: #63baf9;
+}
 
+#products {
+  column-count: 3;
+  position:absolute;
+  left: 250px;
+  margin-top: 70px;
+}
+
+#product{
+  background-color: #63baf9;
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#imgproduct {
+  position: relative;
+  top: 15px;
+}
+
+#description {
+  margin-bottom: 40px;
+  position: relative;
+  top: 20px;
+  background-color:  #63baf9;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-align: center;
+}
 
 /* mobile layout: single colum, all items occupy the entire row, so wrap */
 
