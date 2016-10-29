@@ -40,6 +40,13 @@ main {
 
 @media all and (min-width: 1200px) {
   /* TEMPLATE */
+  body {
+      width: 1170px;
+      background-color: white;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
 
   .header { flex: 0 auto; }
   main    { flex: 8 10px; }
@@ -184,7 +191,10 @@ main {
     padding-top: 30;
     padding-left: 3%;
     padding-right: 3%;
-    text-align: justify;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
   }
 
 
@@ -226,6 +236,7 @@ main {
       color: white;
       font-size: 24;
       font-weight: bold;
+      box-sizing: border-box;
       height: 30px;
   }
 
@@ -262,7 +273,8 @@ main {
 
   .footercontent {
     list-style: none;
-    padding-left: 120px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .footerleft {
@@ -276,7 +288,6 @@ main {
   .footerright {
     order: 2;
     flex: 1 auto;
-    padding-right: 120px;
 
     display: flex;
     flex-flow: row wrap;
