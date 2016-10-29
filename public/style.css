@@ -154,7 +154,6 @@ main {
 
   .header {
     padding-left: 3%;
-    padding-right: 3%;
   }
 
   .searchbar {
@@ -190,7 +189,6 @@ main {
   .maincontent {
     padding-top: 30;
     padding-left: 3%;
-    padding-right: 3%;
 
     display: flex;
     flex-flow: row wrap;
