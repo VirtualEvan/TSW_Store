@@ -8,7 +8,6 @@ body > * {
 }
 
 .header {
-  background: tomato;
 }
 
 main {
@@ -17,7 +16,6 @@ main {
 }
 
 .mainnavigation {
-  background: gold;
   flex: 0.6 auto;
 }
 
@@ -33,19 +31,17 @@ main {
 }
 
 .maincontent {
-  background: white;
 }
 
 
 .ads {
-  background: hotpink;
   flex: 1 auto;
 }
 
 @media all and (min-width: 1200px) {
   /* TEMPLATE */
 
-  .header { flex: 1 auto; }
+  .header { flex: 0 auto; }
   main    { flex: 8 10px; }
   .mainnavigation { order: 1; align-self: flex-start}
   main  { order: 2; }
@@ -191,6 +187,8 @@ main {
     text-align: justify;
   }
 
+
+  /* PRODUCT */
   .product {
       background-color: #63baf9;
       display: inline-block;
@@ -213,6 +211,42 @@ main {
       font-size: 18px;
       font-family: sans-serif;
       text-align: center;
+  }
+
+  /* CHATS */
+
+  .chatname {
+      background-color: #2e6c99;
+      border: #2e6c99 4px solid;
+      width: 100%;
+      display: inline-block;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: white;
+      font-size: 24;
+      font-weight: bold;
+      height: 30px;
+  }
+
+  .chatlink:visited, .chatlink:link {
+      background-color: #63baf9;
+      border: #2e6c99 4px solid;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-weight: normal;
+      text-decoration: none;
+      color: black;
+      width: 100%;
+      height: inherit;
+      padding: 10px;
+      margin-top: 10px;
+      display: inline-block;
+  }
+
+  .chatlink:hover {
+      background-color: rgba(230, 227, 227, 1);
+      color: black;
   }
 
   /* FOOTER */

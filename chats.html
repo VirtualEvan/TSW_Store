@@ -1,59 +1,155 @@
-<!DOCTYPE html>
 <html lang="es">
 <meta charset="UTF-8">
+
 <head>
-    <title>Plantilla CSS Pixel Perfect 960 (no responsive)</title>
-    <link rel="stylesheet" href="public/style_test.css">
+    <title>Product List</title>
+    <link rel="stylesheet" href="public/style.css">
 </head>
 
-<body class="wrapper">
-    <div class="searchbox">
-        <form action="search.php" method="post">
-            <input type="text" id="searchbar" placeholder="Search">
-            <input type="submit" id="searchbutton" value="Search">
-        </form>
-    </div>
+<body>
+    <main>
+        <header class="header">
+            <form action="search.php" method="post">
+                <input type="text" class="searchbar" placeholder="Search">
+                <input type="submit" class="searchbutton" value="Search">
+            </form>
+        </header>
+
+        <article class="maincontent">
+          <div class="chatname">CHATS</div>
+          <a class="chatlink" href=#>Chat1</a>
+          <a class="chatlink" href=#>Chat2</a>
+          <a class="chatlink" href=#>Chat3</a>
+          <a class="chatlink" href=#>Chat4</a>
+          <a class="chatlink" href=#>Chat5</a>
+          <a class="chatlink" href=#>Chat6</a>
+        </article>
+    </main>
     <nav class="mainnavigation">
-        <div id="linkprofile"><a id="linkprofile" href=index.html><img src="img/icon.svg" height="30" weight="30">TraePaká</a></div>
-        <ul id="list_nav">
-          <li>
-            <div id="profile">
-              <div id="imgprofile">
-                  <img src="img/icons/iconmonstr-user-20.svg" height="70" weight="70">
-              </div>
-              <div id="linkprofile">
-                  <a id="linkprofile" href=#> Manuel Pérez <img src="img/gear_icon.svg" height="15" weight="15"> </a>
-              </div>
-          </div>
-        </li>
+        <div class="logo">
+            <a class="indexlink" href=index.html><img src="img/icon.svg" height="30" weight="30">TraePaká</a>
+        </div>
+        <ul class="list_nav">
             <li>
-                <a class="nav" href=#> Añadir producto </a>
+                <div class="profile">
+                    <div class="imgprofile">
+                        <img src="img/icons/iconmonstr-user-20.svg" height="90" weight="90">
+                    </div>
+                    <div class="user">
+                        <a class="linkprofile" href=#> Manuel Pérez <img class="navimage" src="img/gear_icon.svg" height="20" weight="20"> </a>
+                    </div>
+                </div>
             </li>
             <li>
-                <a class="nav" href=#> Mis productos </a>
+                <a class="nav" href=#>
+                    <img class="navimage" src="img/add_icon.svg" height="20" weight="20"> Añadir producto
+                </a>
             </li>
             <li>
-                <a class="nav" href=chats.html> Chats </a>
+                <a class="nav" href=#>
+                    <img class="navimage" src="img/box_icon.svg" height="20" weight="20"> Mis productos
+                </a>
+            </li>
+            <li>
+                <a class="nav" href=chats.html>
+                    <img class="navimage" src="img/chat_icon.svg" height="20" weight="20"> Chats
+                </a>
             </li>
         </ul>
     </nav>
-
-    <div class="maincontent">
-        <div class="chatname">CHATS</div>
-        <div class="chat"><a class="nav2" href=#>chat1</a></div>
-        <div class="chat"><a class="nav2" href=#>chat2</a></div>
-        <div class="chat"><a class="nav2" href=#>chat3</a></div>
-        <div class="chat"><a class="nav2" href=#>chat4</a></div>
-        <div class="chat"><a class="nav2" href=#>chat5</a></div>
-        <div class="chat"><a class="nav2" href=#>chat6</a></div>
-    </div>
-
-    <div class="ads">
-
-    </div>
-    <div class="footer">
-
-    </div>
+    <nav class="ads"></nav>
+    <footer class="footer">
+        <div class="footerleft">
+            <div class="footercolumn">
+                <ul class="footercontent">
+                    <li class="footertitle">
+                        © Traepaká 2016
+                    </li>
+                    <li>
+                        Normas
+                    </li>
+                    <li>
+                        Contacto
+                    </li>
+                    <li>
+                        Información Legal
+                    </li>
+                    <li>
+                        Política de cookies
+                    </li>
+                </ul>
+            </div>
+            <div class="footercolumn">
+                <ul class="footercontent secciones">
+                    <li class="footertitle">
+                        Secciones
+                    </li>
+                    <li>
+                        Portada
+                    </li>
+                    <li>
+                        Destacados
+                    </li>
+                    <li>
+                        Nuevos
+                    </li>
+                    <li>
+                        Comentarios
+                    </li>
+                </ul>
+            </div>
+            <div class="footercolumn">
+                <ul class="footercontent usuario">
+                    <li class="footertitle">
+                        Manuel
+                    </li>
+                    <li>
+                        Perfil
+                    </li>
+                    <li>
+                        Nuevo producto
+                    </li>
+                    <li>
+                        Mis productos
+                    </li>
+                    <li>
+                        Chats
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerright">
+            <div class="footercolumn">
+                <ul class="footercontent redes">
+                    <li class="footertitle">
+                        Redes
+                    </li>
+                    <li>
+                        Facebook
+                    </li>
+                    <li>
+                        Twitter
+                    </li>
+                    <li>
+                        Youtube
+                    </li>
+                </ul>
+            </div>
+            <div class="footercolumn">
+                <ul class="footercontent usuarios">
+                    <li class="footertitle">
+                        Usuarios
+                    </li>
+                    <li>
+                        359553 miembros
+                    </li>
+                    <li>
+                        15028 online
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
