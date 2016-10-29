@@ -23,11 +23,16 @@ main {
 
 
 .footer {
-  background: lightgreen;
+  margin-top: 50px;
+  border-radius: 8px;
+  background: #292d39;
+
+  display: flex;
+  flex-flow: col wrap;
+  justify-content: space-between;
 }
 
 .maincontent {
-  text-align: left;
   background: white;
 }
 
@@ -42,7 +47,7 @@ main {
 
   .header { flex: 1 auto; }
   main    { flex: 8 10px; }
-  .mainnavigation { order: 1; }
+  .mainnavigation { order: 1; align-self: flex-start}
   main  { order: 2; }
   .ads { order: 3; }
   .footer  { order: 4; }
@@ -111,8 +116,6 @@ main {
       margin-bottom: 10%;
   }
 
-
-
   .nav:visited, .nav:link {
       box-sizing: border-box;
       margin: 0;
@@ -147,7 +150,8 @@ main {
   /* SEARCHBOX */
 
   .header {
-    padding: 0;
+    padding-left: 3%;
+    padding-right: 3%;
   }
 
   .searchbar {
@@ -181,12 +185,10 @@ main {
   /* MAINCONTENT */
 
   .maincontent {
-    padding: 0;
-    align-items: center;
-  }
-
-  .numcolumns {
-      column-count: 3;
+    padding-top: 30;
+    padding-left: 3%;
+    padding-right: 3%;
+    text-align: justify;
   }
 
   .product {
@@ -211,6 +213,65 @@ main {
       font-size: 18px;
       font-family: sans-serif;
       text-align: center;
+  }
+
+  /* FOOTER */
+
+  .footercolumn {
+    display: inline-block;
+    color: white;
+  }
+
+  .footertitle {
+    color: #b3b3b3;
+  }
+
+  .footercontent {
+    list-style: none;
+    padding-left: 120px;
+  }
+
+  .footerleft {
+    order: 1;
+    flex: 1 auto;
+
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .footerright {
+    order: 2;
+    flex: 1 auto;
+    padding-right: 120px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+  }
+
+  .sitio {
+    order: 1;
+    flex: 1 auto;
+  }
+
+  .secciones {
+    order: 2;
+    flex: 1 auto;
+  }
+
+  .usuario {
+    order: 3;
+    flex: 1 auto;
+  }
+
+  .redes {
+    order: 1;
+    flex: 1 auto;
+  }
+
+  .usuarios {
+    order: 2;
+    flex: 2 auto;
   }
 
 }
