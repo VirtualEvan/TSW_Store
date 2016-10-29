@@ -1,91 +1,107 @@
-<!DOCTYPE html>
-<html lang="es">
-<meta charset="UTF-8">
-
-<head>
-    <title>Plantilla CSS Pixel Perfect 960 (no responsive)</title>
-    <link rel="stylesheet" href="public/style.css">
-</head>
+<link rel="stylesheet" href="public/style.css">
 
 <body>
-    <div id="searchbox">
-      <form action="search.php" method="post">
-        <input type="text" id="searchbar" placeholder="Search">
-        <input type="submit" id="searchbutton" value="Search">
-      </form>
-    </div>
+    <main>
+        <header class="header">
+            <form action="search.php" method="post">
+                <input type="text" class="searchbar" placeholder="Search">
+                <input type="submit" class="searchbutton" value="Search">
+            </form>
+        </header>
 
-    <nav id="mainnavigation">
-        <div id="linkprofile"><a id="linkprofile" href=index.html><img src="img/icon.svg" height="30" weight="30">TraePaká</a></div>
-        <ul id="list_nav">
-          <li>
-            <div id="profile">
-              <div id="imgprofile">
-                  <img src="img/icons/iconmonstr-user-20.svg" height="70" weight="70">
+        <article class="maincontent numcolumns">
+          <div class="product">
+              <div class="imgproduct">
+                  <a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a>
               </div>
-              <div id="linkprofile">
-                  <a id="linkprofile" href=#> Manuel Pérez <img src="img/gear_icon.svg" height="15" weight="15"> </a>
-              </div>
+              <div class="description">Vilares<br>0.50€</div>
           </div>
-          </li>
-            <li class="">
-                <a class="nav" href=#> Añadir producto </a>
+          <div class="product">
+              <div class="imgproduct">
+                  <a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a>
+              </div>
+              <div class="description">Vilares<br>0.50€</div>
+          </div>
+          <div class="product">
+              <div class="imgproduct">
+                  <a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a>
+              </div>
+              <div class="description">Vilares<br>0.50€</div>
+          </div>
+          <div class="product">
+              <div class="imgproduct">
+                  <a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a>
+              </div>
+              <div class="description">Vilares<br>0.50€</div>
+          </div>
+          <div class="product">
+              <div class="imgproduct">
+                  <a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a>
+              </div>
+              <div class="description">Vilares<br>0.50€</div>
+          </div>
+          <div class="product">
+              <div class="imgproduct">
+                  <a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a>
+              </div>
+              <div class="description">Vilares<br>0.50€</div>
+          </div>
+          <div class="product">
+              <div class="imgproduct">
+                  <a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a>
+              </div>
+              <div class="description">Vilares<br>0.50€</div>
+          </div>
+          <div class="product">
+              <div class="imgproduct">
+                  <a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a>
+              </div>
+              <div class="description">Vilares<br>0.50€</div>
+          </div>
+          <div class="product">
+              <div class="imgproduct">
+                  <a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a>
+              </div>
+              <div class="description">Vilares<br>0.50€</div>
+          </div>
+
+        </article>
+    </main>
+    <nav class="mainnavigation">
+        <div class="logo">
+            <a class="indexlink" href=index.html><img src="img/icon.svg" height="30" weight="30">TraePaká</a>
+        </div>
+        <ul class="list_nav">
+            <li>
+                <div class="profile">
+                    <div class="imgprofile">
+                        <img src="img/icons/iconmonstr-user-20.svg" height="90" weight="90">
+                    </div>
+                    <div class="user">
+                        <a class="linkprofile" href=#> Manuel Pérez <img class="navimage" src="img/gear_icon.svg" height="20" weight="20"> </a>
+                    </div>
+                </div>
             </li>
-            <li class="">
-                <a class="nav" href=#> Mis productos </a>
+            <li>
+                <a class="nav" href=#>
+                   <img class="navimage" src="img/add_icon.svg" height="20" weight="20">
+                   Añadir producto
+                 </a>
             </li>
-            <li class="">
-                <a class="nav" href=chats.html> Chats </a>
+            <li>
+              <a class="nav" href=#>
+                 <img class="navimage" src="img/box_icon.svg" height="20" weight="20">
+                 Mis productos
+               </a>
+            </li>
+            <li>
+              <a class="nav" href=chats.html>
+                 <img class="navimage" src="img/chat_icon.svg" height="20" weight="20">
+                 Chats
+               </a>
             </li>
         </ul>
-
     </nav>
-
-    <div id="products">
-        <div id="product">
-          <div id="imgproduct"><a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a></div>
-          <div id="description">Vilares<br>0.50€</div>
-        </div>
-        <div id="product">
-          <div id="imgproduct"><a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a></div>
-          <div id="description">Vilares<br>0.50€</div>
-        </div>
-        <div id="product">
-          <div id="imgproduct"><a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a></div>
-          <div id="description">Vilares<br>0.50€</div>
-        </div>
-        <div id="product">
-          <div id="imgproduct"><a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a></div>
-          <div id="description">Vilares<br>0.50€</div>
-        </div>
-        <div id="product">
-          <div id="imgproduct"><a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a></div>
-          <div id="description">Vilares<br>0.50€</div>
-        </div>
-        <div id="product">
-          <div id="imgproduct"><a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a></div>
-          <div id="description">Vilares<br>0.50€</div>
-        </div>
-        <div id="product">
-          <div id="imgproduct"><a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a></div>
-          <div id="description">Vilares<br>0.50€</div>
-        </div>
-        <div id="product">
-          <div id="imgproduct"><a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a></div>
-          <div id="description">Vilares<br>0.50€</div>
-        </div>
-        <div id="product">
-          <div id="imgproduct"><a href=#><img src="img/ejemplo.jpg" width="300" heigth="190"></a></div>
-          <div id="description">Vilares<br>0.50€</div>
-        </div>
-    </div>
-    <!--
-    <header>HEAD</header>
-    <article id="maincontent">MAIN Content<br>This is the main content...</article>
-    <nav id="mainnavigation">LINKS</nav>
-    <aside id="news">NEWS</aside>
-    <footer>FOOTER</footer>
-    -->
+    <nav class="ads">Aside 2</nav>
+    <footer class="footer">Footer</footer>
 </body>
-
-</html>
