@@ -1,7 +1,6 @@
 /*
 TODO: <!DOCTYPE html>
 TODO: Arreglar el foorer en versiones pequeñas
-TODO: Poner imágenes al footer
 TODO: Diferencia de márgenes en el body de una de las páginas
 */
 
@@ -309,8 +308,8 @@ main {
 
 .footercontent {
     list-style: none;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .footerimage {
@@ -369,6 +368,11 @@ main {
     .maincontent {
         justify-content: space-between;
     }
+
+    .footercontent {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 @media (min-width:641px) {
@@ -417,6 +421,11 @@ main {
     /* PRODUCT */
     /* CHATS */
     /* FOOTER */
+    .footercontent {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
 }
 
 @media (min-width:961px) {
@@ -427,6 +436,80 @@ main {
     .imgsize {
         width: 230px;
         height: 230px;
+    }
+    /*//////////COMPORBAR///////////////////////////*/
+    /* FOOTER */
+
+    .footer {
+        margin-top: 50px;
+        border-radius: 8px;
+        background: #292d39;
+        display: flex;
+        flex-flow: col wrap;
+        justify-content: space-between;
+    }
+
+    .footercolumn {
+        display: inline-block;
+        color: white;
+    }
+
+    .footertitle {
+        color: #b3b3b3;
+    }
+
+    .footercontent {
+        list-style: none;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .footerimage {
+        float: left;
+        margin-top: 3;
+        margin-right: 3;
+        width: 15;
+        height: 15;
+    }
+
+    .footerleft {
+        order: 1;
+        flex: 1 auto;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .footerright {
+        order: 2;
+        flex: 1 auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+    }
+
+    .sitio {
+        order: 1;
+        flex: 1 auto;
+    }
+
+    .secciones {
+        order: 2;
+        flex: 1 auto;
+    }
+
+    .usuario {
+        order: 3;
+        flex: 1 auto;
+    }
+
+    .redes {
+        order: 1;
+        flex: 1 auto;
+    }
+
+    .usuarios {
+        order: 2;
+        flex: 2 auto;
     }
 }
 
