@@ -322,42 +322,27 @@ main {
 
 .footerleft {
     order: 1;
-    flex: 1 auto;
+    flex: 2;
     display: flex;
     flex-flow: row wrap;
 }
 
 .footerright {
     order: 2;
-    flex: 1 auto;
+    flex: 1.5 1 ;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-}
-
-.sitio {
-    order: 1;
-    flex: 1 auto;
-}
-
-.secciones {
-    order: 2;
-    flex: 1 auto;
-}
-
-.usuario {
-    order: 3;
-    flex: 1 auto;
+    flex-flow: column wrap;
 }
 
 .redes {
     order: 1;
-    flex: 1 auto;
+    flex: 1 ;
 }
 
 .usuarios {
+    margin-top: 45px;
     order: 2;
-    flex: 2 auto;
+    flex: 1 100px;
 }
 
 @media (min-width:481px) {
@@ -426,6 +411,14 @@ main {
         padding-right: 30px;
     }
 
+    .footerright {
+        margin-left: 100px;
+        order: 2;
+        flex: 1.5 1 ;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
 }
 
 @media (min-width:961px) {
@@ -437,39 +430,12 @@ main {
         width: 230px;
         height: 230px;
     }
-    /*//////////COMPORBAR///////////////////////////*/
     /* FOOTER */
-
-    .footer {
-        margin-top: 50px;
-        border-radius: 8px;
-        background: #292d39;
-        display: flex;
-        flex-flow: col wrap;
-        justify-content: space-between;
-    }
-
-    .footercolumn {
-        display: inline-block;
-        color: white;
-    }
-
-    .footertitle {
-        color: #b3b3b3;
-    }
 
     .footercontent {
         list-style: none;
         padding-left: 30px;
         padding-right: 30px;
-    }
-
-    .footerimage {
-        float: left;
-        margin-top: 3;
-        margin-right: 3;
-        width: 15;
-        height: 15;
     }
 
     .footerleft {
@@ -480,6 +446,7 @@ main {
     }
 
     .footerright {
+        margin-left: 0;
         order: 2;
         flex: 1 auto;
         display: flex;
@@ -487,20 +454,7 @@ main {
         justify-content: flex-end;
     }
 
-    .sitio {
-        order: 1;
-        flex: 1 auto;
-    }
 
-    .secciones {
-        order: 2;
-        flex: 1 auto;
-    }
-
-    .usuario {
-        order: 3;
-        flex: 1 auto;
-    }
 
     .redes {
         order: 1;
@@ -508,6 +462,7 @@ main {
     }
 
     .usuarios {
+        margin-top: 20px;
         order: 2;
         flex: 2 auto;
     }
