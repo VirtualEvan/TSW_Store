@@ -267,6 +267,13 @@ body>* {
         padding-left: 30px;
         padding-right: 30px;
     }
+    .footerimage {
+        float: left;
+        margin-top: 3;
+        margin-right: 3;
+        width: 15;
+        height: 15;
+    }
     .footerleft {
         order: 1;
         flex: 1 auto;
