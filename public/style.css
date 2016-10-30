@@ -223,6 +223,11 @@ main {
     margin-bottom: 20px;
 }
 
+.linkproduct:visited, .linkproduct:link {
+    text-decoration: none;
+    color: black;
+}
+
 .imgproduct {
     position: relative;
     top: 15px;
