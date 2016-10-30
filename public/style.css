@@ -329,14 +329,14 @@ main {
 
 .footerright {
     order: 2;
-    flex: 1.5 1 ;
+    flex: 1.5 1;
     display: flex;
     flex-flow: column wrap;
 }
 
 .redes {
     order: 1;
-    flex: 1 ;
+    flex: 1;
 }
 
 .usuarios {
@@ -353,7 +353,6 @@ main {
     .maincontent {
         justify-content: space-between;
     }
-
     .footercontent {
         padding-left: 20px;
         padding-right: 20px;
@@ -410,15 +409,13 @@ main {
         padding-left: 30px;
         padding-right: 30px;
     }
-
     .footerright {
         margin-left: 100px;
         order: 2;
-        flex: 1.5 1 ;
+        flex: 1.5 1;
         display: flex;
         flex-flow: column wrap;
     }
-
 }
 
 @media (min-width:961px) {
@@ -431,20 +428,17 @@ main {
         height: 230px;
     }
     /* FOOTER */
-
     .footercontent {
         list-style: none;
         padding-left: 30px;
         padding-right: 30px;
     }
-
     .footerleft {
         order: 1;
         flex: 1 auto;
         display: flex;
         flex-flow: row wrap;
     }
-
     .footerright {
         margin-left: 0;
         order: 2;
@@ -453,14 +447,10 @@ main {
         flex-flow: row wrap;
         justify-content: flex-end;
     }
-
-
-
     .redes {
         order: 1;
         flex: 1 auto;
     }
-
     .usuarios {
         margin-top: 20px;
         order: 2;
