@@ -162,10 +162,11 @@ main {
 .searchbar {
     float: left;
     padding-left: 10px;
+    padding-right: 0px;
     border: none;
     height: 38px;
-    width: calc(100% - 80px);
-    flex: 1 1 calc(100% - 80px);
+    width: calc(100% - 90px);
+    flex: 1 1 calc(100% - 90px);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     font-size: 18px;
@@ -177,7 +178,7 @@ main {
 .searchbutton {
     float: left;
     position: relative;
-    height: 38px;
+    height: 40px;
     width: 80px;
     flex: 0 0 80px;
     border: none;
@@ -404,8 +405,8 @@ main {
         padding-right: 0px;
     }
     .searchbar {
-        width: calc(100% - 130px);
-        flex: 1 1 calc(100% - 130px);
+        width: calc(100% - 140px);
+        flex: 1 1 calc(100% - 140px);
     }
     .searchbutton {
         width: 130px;
