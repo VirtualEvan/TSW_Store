@@ -8,92 +8,92 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema traepaka
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema traepaka
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `traepaka` DEFAULT CHARACTER SET utf8 ;
+USE `traepaka` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Usuario`
+-- Table `traepaka`.`usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
-  `idUsuario` INT NOT NULL,
-  `nombreUsuario` VARCHAR(45) NULL,
-  `contraseñaUsuario` VARCHAR(45) NULL,
-  `loginUsuario` VARCHAR(45) NULL,
-  `correoUsuario` VARCHAR(45) NULL,
-  PRIMARY KEY (`idUsuario`))
+CREATE TABLE IF NOT EXISTS `traepaka`.`users` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `username` VARCHAR(45) NULL,
+  `mail` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Producto`
+-- Table `traepaka`.`producto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Producto` (
-  `idProducto` INT NOT NULL,
-  `nombreProducto` VARCHAR(45) NULL,
-  `precioProducto` FLOAT NULL,
-  `descripcionProducto` VARCHAR(500) NULL,
-  `imagenProducto` VARCHAR(45) NULL,
-  `Usuario_idUsuario` INT NOT NULL,
-  PRIMARY KEY (`idProducto`),
-  INDEX `fk_Producto_Usuario_idx` (`Usuario_idUsuario` ASC),
-  CONSTRAINT `fk_Producto_Usuario`
-    FOREIGN KEY (`Usuario_idUsuario`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE IF NOT EXISTS `traepaka`.`products` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `price` FLOAT NULL,
+  `description` VARCHAR(500) NULL,
+  `image` VARCHAR(45) NULL,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_products_user_idx` (`user_id` ASC),
+  CONSTRAINT `fk_product_user`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `traepaka`.`user` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Chat`
+-- Table `traepaka`.`chat`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Chat` (
-  `idChat` INT NOT NULL,
-  `Usuario_idComprador` INT NOT NULL,
-  `Usuario_idVendedor` INT NOT NULL,
-  `Producto_idProducto` INT NOT NULL,
-  PRIMARY KEY (`idChat`),
-  INDEX `fk_Chat_Usuario1_idx` (`Usuario_idComprador` ASC),
-  INDEX `fk_Chat_Usuario2_idx` (`Usuario_idVendedor` ASC),
-  INDEX `fk_Chat_Producto1_idx` (`Producto_idProducto` ASC),
-  CONSTRAINT `fk_Chat_Usuario1`
-    FOREIGN KEY (`Usuario_idComprador`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+CREATE TABLE IF NOT EXISTS `traepaka`.`chats` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `seller_id` INT NOT NULL,
+  `buyer_id` INT NOT NULL,
+  `product_id` INT NOT NULL,
+  PRIMARY KEY (`id_chat`),
+  INDEX `fk_chat_seller_idx` (`seller_id` ASC),
+  INDEX `fk_chat_buyer_idx` (`buyer_id` ASC),
+  INDEX `fk_chat_product_idx` (`product_id` ASC),
+  CONSTRAINT `fk_chat_seller`
+    FOREIGN KEY (`seller_id`)
+    REFERENCES `traepaka`.`users` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Chat_Usuario2`
-    FOREIGN KEY (`Usuario_idVendedor`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_chat_buyer`
+    FOREIGN KEY (`buyer_id`)
+    REFERENCES `traepaka`.`users` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Chat_Producto1`
-    FOREIGN KEY (`Producto_idProducto`)
-    REFERENCES `mydb`.`Producto` (`idProducto`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_chat_product`
+    FOREIGN KEY (`product_id`)
+    REFERENCES `traepaka`.`products` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Mensaje`
+-- Table `traepaka`.`Mensaje`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Mensaje` (
-  `idMensaje` INT NOT NULL,
-  `sealerMensaje` TINYINT(1) NULL,
-  `Chat_idChat` INT NOT NULL,
-  PRIMARY KEY (`idMensaje`),
-  INDEX `fk_Mensaje_Chat1_idx` (`Chat_idChat` ASC),
-  CONSTRAINT `fk_Mensaje_Chat1`
-    FOREIGN KEY (`Chat_idChat`)
-    REFERENCES `mydb`.`Chat` (`idChat`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE IF NOT EXISTS `traepaka`.`messages` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sender` TINYINT(1) NULL,
+  `chat_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_message_chat_idx` (`chat_id` ASC),
+  CONSTRAINT `fk_message_chat`
+    FOREIGN KEY (`chat_id`)
+    REFERENCES `traepaka`.`chats` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
