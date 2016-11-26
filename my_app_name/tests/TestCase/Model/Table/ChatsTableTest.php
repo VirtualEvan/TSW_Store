@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\ProductsTable;
+use App\Model\Table\ChatsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\ProductsTable Test Case
+ * App\Model\Table\ChatsTable Test Case
  */
-class ProductsTableTest extends TestCase
+class ChatsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\ProductsTable
+     * @var \App\Model\Table\ChatsTable
      */
-    public $Products;
+    public $Chats;
 
     /**
      * Fixtures
@@ -24,9 +24,10 @@ class ProductsTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.products',
+        'app.chats',
         'app.users',
-        'app.chats'
+        'app.products',
+        'app.messages'
     ];
 
     /**
@@ -37,8 +38,8 @@ class ProductsTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Products') ? [] : ['className' => 'App\Model\Table\ProductsTable'];
-        $this->Products = TableRegistry::get('Products', $config);
+        $config = TableRegistry::exists('Chats') ? [] : ['className' => 'App\Model\Table\ChatsTable'];
+        $this->Chats = TableRegistry::get('Chats', $config);
     }
 
     /**
@@ -48,7 +49,7 @@ class ProductsTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Products);
+        unset($this->Chats);
 
         parent::tearDown();
     }
