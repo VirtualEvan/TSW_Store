@@ -16,7 +16,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 DROP DATABASE IF EXISTS `traepaka`;
 CREATE SCHEMA IF NOT EXISTS `traepaka` DEFAULT CHARACTER SET utf8 ;
-DROP USER IF EXISTS `tsw_user`@'localhost';
+-- DROP USER IF EXISTS `tsw_user`@'localhost';
 CREATE USER 'tsw_user'@'localhost' IDENTIFIED BY 'tsw_pass';
 GRANT USAGE, SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER ON `traepaka`.* TO 'tsw_user'@'localhost';
 USE `traepaka` ;
