@@ -23,10 +23,6 @@
             <td><?= h($product->description) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Image') ?></th>
-            <td><?= h($product->image) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('User') ?></th>
             <td><?= $product->has('user') ? $this->Html->link($product->user->name, ['controller' => 'Users', 'action' => 'view', $product->user->id]) : '' ?></td>
         </tr>
@@ -49,16 +45,14 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Seller Id') ?></th>
-                <th scope="col"><?= __('Buyer Id') ?></th>
+                <th scope="col"><?= __('User Id') ?></th>
                 <th scope="col"><?= __('Product Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($product->chats as $chats): ?>
             <tr>
                 <td><?= h($chats->id) ?></td>
-                <td><?= h($chats->seller_id) ?></td>
-                <td><?= h($chats->buyer_id) ?></td>
+                <td><?= h($chats->user_id) ?></td>
                 <td><?= h($chats->product_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Chats', 'action' => 'view', $chats->id]) ?>

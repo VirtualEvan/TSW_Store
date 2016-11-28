@@ -10,7 +10,6 @@ use Cake\Validation\Validator;
  * Chats Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Users
- * @property \Cake\ORM\Association\BelongsTo $Users
  * @property \Cake\ORM\Association\BelongsTo $Products
  * @property \Cake\ORM\Association\HasMany $Messages
  *
@@ -40,11 +39,7 @@ class ChatsTable extends Table
         $this->primaryKey('id');
 
         $this->belongsTo('Users', [
-            'foreignKey' => 'seller_id',
-            'joinType' => 'INNER'
-        ]);
-        $this->belongsTo('Users', [
-            'foreignKey' => 'buyer_id',
+            'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Products', [
@@ -80,8 +75,7 @@ class ChatsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['seller_id'], 'Users'));
-        $rules->add($rules->existsIn(['buyer_id'], 'Users'));
+        $rules->add($rules->existsIn(['user_id'], 'Users'));
         $rules->add($rules->existsIn(['product_id'], 'Products'));
 
         return $rules;

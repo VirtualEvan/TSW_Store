@@ -17,10 +17,6 @@
     <h3><?= h($chat->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('User') ?></th>
-            <td><?= $chat->has('user') ? $this->Html->link($chat->user->name, ['controller' => 'Users', 'action' => 'view', $chat->user->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Product') ?></th>
             <td><?= $chat->has('product') ? $this->Html->link($chat->product->name, ['controller' => 'Products', 'action' => 'view', $chat->product->id]) : '' ?></td>
         </tr>
@@ -29,8 +25,8 @@
             <td><?= $this->Number->format($chat->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Seller Id') ?></th>
-            <td><?= $this->Number->format($chat->seller_id) ?></td>
+            <th scope="row"><?= __('User Id') ?></th>
+            <td><?= $this->Number->format($chat->user_id) ?></td>
         </tr>
     </table>
     <div class="related">

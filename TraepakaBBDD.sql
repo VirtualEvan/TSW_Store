@@ -42,7 +42,6 @@ CREATE TABLE IF NOT EXISTS `traepaka`.`products` (
   `name` VARCHAR(45) NOT NULL,
   `price` FLOAT NOT NULL,
   `description` VARCHAR(500) NOT NULL,
-  `image` VARCHAR(45) NOT NULL,
   `user_id` INT NOT NULL,
   `created` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
@@ -60,20 +59,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `traepaka`.`chats` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `seller_id` INT NOT NULL,
-  `buyer_id` INT NOT NULL,
+  `user_id` INT NOT NULL,
   `product_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_chat_seller_idx` (`seller_id` ASC),
-  INDEX `fk_chat_buyer_idx` (`buyer_id` ASC),
+  INDEX `fk_chat_buyer_idx` (`user_id` ASC),
   INDEX `fk_chat_product_idx` (`product_id` ASC),
-  CONSTRAINT `fk_chat_seller`
-    FOREIGN KEY (`seller_id`)
-    REFERENCES `traepaka`.`users` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE CASCADE,
   CONSTRAINT `fk_chat_buyer`
-    FOREIGN KEY (`buyer_id`)
+    FOREIGN KEY (`user_id`)
     REFERENCES `traepaka`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE,
@@ -113,28 +105,28 @@ INSERT INTO users (id, name, username, password, email)
 
 /* Then insert some products for testing: */
 /*ropa*/
-INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (1, 'Producto1', 80,'Descripcion de producto 1','Imagen1',1, NOW());
+INSERT INTO products (id, name, price, description, user_id, created)
+    VALUES (1, 'Producto1', 80,'Descripcion de producto 1',1, NOW());
 /*telefono roto*/
-INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (2, 'Pruducto2', 100,'Descripcion de producto 2','Imagen2',1, NOW());
-INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (3, 'Pruducto3', 20,'Descripcion de producto 3','Imagen3',1, NOW());
+INSERT INTO products (id, name, price, description, user_id, created)
+    VALUES (2, 'Pruducto2', 100,'Descripcion de producto 2',1, NOW());
+INSERT INTO products (id, name, price, description, user_id, created)
+    VALUES (3, 'Pruducto3', 20,'Descripcion de producto 3',1, NOW());
 /*algo de tia*/
-INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (4, 'Pruducto4', 30,'Descripcion de producto 4','Imagen4',2, NOW());
-INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (5, 'Pruducto5', 200,'Descripcion de producto 5','Imagen5',2, NOW());
-INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (6, 'Pruducto6', 1024,'Descripcion de producto 6','Imagen6',3, NOW());
+INSERT INTO products (id, name, price, description, user_id, created)
+    VALUES (4, 'Pruducto4', 30,'Descripcion de producto 4',2, NOW());
+INSERT INTO products (id, name, price, description, user_id, created)
+    VALUES (5, 'Pruducto5', 200,'Descripcion de producto 5',2, NOW());
+INSERT INTO products (id, name, price, description, user_id, created)
+    VALUES (6, 'Pruducto6', 1024,'Descripcion de producto 6',3, NOW());
 
 /* Then insert some chats for testing: */
-INSERT INTO chats (id, seller_id, buyer_id, product_id)
-    VALUES (1, 1, 2, 1);
-INSERT INTO chats (id, seller_id, buyer_id, product_id)
-    VALUES (2, 1, 3, 2);
-INSERT INTO chats (id, seller_id, buyer_id, product_id)
-    VALUES (3, 2, 3, 4);
+INSERT INTO chats (id, user_id, product_id)
+    VALUES (1, 2, 1);
+INSERT INTO chats (id, user_id, product_id)
+    VALUES (2, 3, 2);
+INSERT INTO chats (id, user_id, product_id)
+    VALUES (3, 3, 4);
 
 /* Then insert some messages for testing: */
 INSERT INTO messages (id, sender, chat_id, content, created)

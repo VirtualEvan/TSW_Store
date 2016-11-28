@@ -21,7 +21,6 @@ class ProductsFixture extends TestFixture
         'name' => ['type' => 'string', 'length' => 45, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'price' => ['type' => 'float', 'length' => null, 'precision' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => ''],
         'description' => ['type' => 'string', 'length' => 500, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'image' => ['type' => 'string', 'length' => 45, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'user_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         '_indexes' => [
@@ -49,9 +48,8 @@ class ProductsFixture extends TestFixture
             'name' => 'Lorem ipsum dolor sit amet',
             'price' => 1,
             'description' => 'Lorem ipsum dolor sit amet',
-            'image' => 'Lorem ipsum dolor sit amet',
             'user_id' => 1,
-            'created' => '2016-11-26 18:57:06'
+            'created' => '2016-11-28 15:37:52'
         ],
     ];
 }

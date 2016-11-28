@@ -16,8 +16,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('seller_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('buyer_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('product_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -26,8 +25,7 @@
             <?php foreach ($chats as $chat): ?>
             <tr>
                 <td><?= $this->Number->format($chat->id) ?></td>
-                <td><?= $this->Number->format($chat->seller_id) ?></td>
-                <td><?= $chat->has('user') ? $this->Html->link($chat->user->name, ['controller' => 'Users', 'action' => 'view', $chat->user->id]) : '' ?></td>
+                <td><?= $this->Number->format($chat->user_id) ?></td>
                 <td><?= $chat->has('product') ? $this->Html->link($chat->product->name, ['controller' => 'Products', 'action' => 'view', $chat->product->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $chat->id]) ?>

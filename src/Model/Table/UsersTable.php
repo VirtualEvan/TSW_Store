@@ -9,6 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Users Model
  *
+ * @property \Cake\ORM\Association\HasMany $Chats
  * @property \Cake\ORM\Association\HasMany $Products
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
@@ -36,6 +37,9 @@ class UsersTable extends Table
         $this->displayField('name');
         $this->primaryKey('id');
 
+        $this->hasMany('Chats', [
+            'foreignKey' => 'user_id'
+        ]);
         $this->hasMany('Products', [
             'foreignKey' => 'user_id'
         ]);

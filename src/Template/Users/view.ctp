@@ -42,7 +42,6 @@
                 <th scope="col"><?= __('Name') ?></th>
                 <th scope="col"><?= __('Price') ?></th>
                 <th scope="col"><?= __('Description') ?></th>
-                <th scope="col"><?= __('Image') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -53,7 +52,6 @@
                 <td><?= h($products->name) ?></td>
                 <td><?= h($products->price) ?></td>
                 <td><?= h($products->description) ?></td>
-                <td><?= h($products->image) ?></td>
                 <td><?= h($products->user_id) ?></td>
                 <td><?= h($products->created) ?></td>
                 <td class="actions">

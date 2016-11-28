@@ -7,8 +7,7 @@ use Cake\ORM\Entity;
  * Chat Entity
  *
  * @property int $id
- * @property int $seller_id
- * @property int $buyer_id
+ * @property int $user_id
  * @property int $product_id
  *
  * @property \App\Model\Entity\User $user

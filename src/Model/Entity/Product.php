@@ -10,7 +10,6 @@ use Cake\ORM\Entity;
  * @property string $name
  * @property float $price
  * @property string $description
- * @property string $image
  * @property int $user_id
  * @property \Cake\I18n\Time $created
  *

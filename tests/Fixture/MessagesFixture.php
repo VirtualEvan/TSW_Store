@@ -47,7 +47,7 @@ class MessagesFixture extends TestFixture
             'sender' => 1,
             'chat_id' => 1,
             'content' => 'Lorem ipsum dolor sit amet',
-            'created' => '2016-11-26 18:57:37'
+            'created' => '2016-11-28 15:37:52'
         ],
     ];
 }

@@ -15,8 +15,7 @@
     <fieldset>
         <legend><?= __('Add Chat') ?></legend>
         <?php
-            echo $this->Form->input('seller_id');
-            echo $this->Form->input('buyer_id', ['options' => $users]);
+            echo $this->Form->input('user_id');
             echo $this->Form->input('product_id', ['options' => $products]);
         ?>
     </fieldset>
