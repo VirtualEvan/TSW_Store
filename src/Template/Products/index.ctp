@@ -1,41 +1,15 @@
-    <h3><?= __('Products') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('price') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('description') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('image') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($products as $product): ?>
-            <tr>
-                <td><?= $this->Number->format($product->id) ?></td>
-                <td><?= h($product->name) ?></td>
-                <td><?= $this->Number->format($product->price) ?></td>
-                <td><?= h($product->description) ?></td>
-                <td><?= h($product->image) ?></td>
-                <td><?= $product->has('user') ? $this->Html->link($product->user->name, ['controller' => 'Users', 'action' => 'view', $product->user->id]) : '' ?></td>
-                <td><?= h($product->created) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $product->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete # {0}?', $product->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-        </ul>
-        <p><?= $this->Paginator->counter() ?></p>
-    </div>
+    <?php
+      foreach ($products as $product):
+        $div_price = $this->Html->div('price', $this->Number->format($product->price).$this->Html->image('profile_img.svg', array('alt' => 'Seller', 'class' => 'sellerimg', 'escape' => false)));
+        $div_productname = $this->Html->div('productname', h($product->name));
+        $div_description = $this->Html->div('description', $div_productname.$div_price);
+        $div_productimg = $this->Html->div('productimg', $this->Html->image('ejemplo.jpg', array('alt' => 'Product', 'class' => 'productimgsize', 'escape' => false)));
+        $div_product = $this->Html->div('product', $div_productimg.$div_description);
+
+        echo $this->Html->link(
+            $div_product,
+            array('controller' => 'Products', 'action' => 'view', $product->id),
+            array('class' => 'linkproduct', 'escape' => false)
+        );
+      endforeach;
+    ?>  
