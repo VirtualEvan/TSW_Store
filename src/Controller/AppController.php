@@ -43,6 +43,28 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'loginRedirect' => [
+                'controller' => 'Products',
+                'action' => 'index'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Products',
+                'action' => 'index'
+            ]
+        ]);
+    }
+
+
+    /**
+     * Before render callback.
+     *
+     * @param \Cake\Event\Event $event The beforeRender event.
+     * @return \Cake\Network\Response|null|void
+     */
+    public function beforeFilter(Event $event)
+    {
+        //$this->Auth->allow(['index', 'view', 'display']);
     }
 
     /**
