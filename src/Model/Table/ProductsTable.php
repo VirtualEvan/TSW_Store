@@ -75,6 +75,10 @@ class ProductsTable extends Table
             ->requirePresence('description', 'create')
             ->notEmpty('description');
 
+        $validator
+            ->requirePresence('image', 'create')
+            ->notEmpty('image');
+
         return $validator;
     }
 
