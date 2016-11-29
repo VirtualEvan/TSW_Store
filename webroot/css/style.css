@@ -172,6 +172,7 @@ main {
     font-size: 18px;
     font-family: sans-serif;
     color: white;
+    outline: none;
     background-color: #1A1616;
 }
 
@@ -187,6 +188,7 @@ main {
     font-size: 18px;
     font-family: sans-serif;
     color: white;
+    outline: none;
     background-color: #63baf9;
 }
 
@@ -219,7 +221,7 @@ main {
 }
 
 .productimg {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 .productimgsize {
@@ -299,6 +301,65 @@ main {
     color: black;
 }
 
+.messagecontainer {
+    display: inline-block;
+    width: 100%
+}
+
+.message {
+    display: inline-block;
+    max-width: 50%;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.messagehour {
+    font-size: 12px;
+    text-align: right;
+}
+
+.sender {
+    background-color: rgba(0,255,0,0.4)  ;
+    margin-left: 20%;
+    float: right;
+}
+
+.recipient {
+    background-color: rgba(0,0,180,0.4)  ;
+    margin-right: 20%;
+    float: left;
+}
+
+.newmessage {
+  display: inline-block;
+  width: 100%;
+}
+
+.messagetextarea {
+  display: inline-block;
+  float: left;
+  resize: none;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  box-shadow:0px 0px 0px 1px black inset;
+  width: calc(100% - 80px);
+}
+
+.messagebutton {
+  display: inline-block;
+  float: left;
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 0px;
+  margin: 0px;
+  width: 80px;
+  height: 100%
+}
 
 /* FOOTER */
 
