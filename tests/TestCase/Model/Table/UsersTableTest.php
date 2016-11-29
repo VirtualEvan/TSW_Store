@@ -25,8 +25,8 @@ class UsersTableTest extends TestCase
      */
     public $fixtures = [
         'app.users',
-        'app.products',
         'app.chats',
+        'app.products',
         'app.messages'
     ];
 

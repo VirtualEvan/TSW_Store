@@ -98,11 +98,11 @@ ENGINE = InnoDB;
 
 /* Then insert some users for testing: */
 INSERT INTO users (id, name, username, password, email)
-    VALUES (1, 'Esteban', 'virtualevan','password', 'virtualevan@gmail.com');
+    VALUES (1, 'Esteban', 'virtualevan','$2y$10$Ma5IOOqAVlIU2WKbkhfAaeDxbC1ju5jxJrILi5ZM9f0ioCV/avoJa', 'virtualevan@gmail.com');
 INSERT INTO users (id, name, username, password, email)
-    VALUES (2, 'Luis', 'lrcortizo','password', 'lrcortizo@esei.uvigo.es');
+    VALUES (2, 'Luis', 'lrcortizo','$2y$10$Ma5IOOqAVlIU2WKbkhfAaeDxbC1ju5jxJrILi5ZM9f0ioCV/avoJa', 'lrcortizo@esei.uvigo.es');
 INSERT INTO users (id, name, username, password, email)
-    VALUES (3, 'Pablo', 'prhermida','password', 'prhermida@esei.uvigo.es');
+    VALUES (3, 'Pablo', 'prhermida','$2y$10$Ma5IOOqAVlIU2WKbkhfAaeDxbC1ju5jxJrILi5ZM9f0ioCV/avoJa', 'prhermida@esei.uvigo.es');
 
 /* Then insert some products for testing: */
 /*ropa*/

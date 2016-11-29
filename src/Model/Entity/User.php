@@ -13,6 +13,7 @@ use Cake\ORM\Entity;
  * @property string $password
  * @property string $email
  *
+ * @property \App\Model\Entity\Chat[] $chats
  * @property \App\Model\Entity\Product[] $products
  */
 class User extends Entity
@@ -45,5 +46,4 @@ class User extends Entity
     {
         return (new DefaultPasswordHasher)->hash($password);
     }
-
 }
