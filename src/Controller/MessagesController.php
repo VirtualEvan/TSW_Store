@@ -11,6 +11,16 @@ use App\Controller\AppController;
 class MessagesController extends AppController
 {
 
+    public function isAuthorized($user)
+    {
+        // All registered users can add messages
+        if ($this->request->action === 'add') {
+            return true;
+        }
+
+        return parent::isAuthorized($user);
+    }
+
     /**
      * Index method
      *
@@ -47,19 +57,21 @@ class MessagesController extends AppController
     /**
      * Add method
      *
+     * @param string|null $id Chat id.
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($id = null)
     {
         $message = $this->Messages->newEntity();
         if ($this->request->is('post')) {
             $message = $this->Messages->patchEntity($message, $this->request->data);
+            $message->chat_id = $id;
             if ($this->Messages->save($message)) {
-                $this->Flash->success(__('The message has been saved.'));
+                $this->Flash->success(__('The message has been sent.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The message could not be saved. Please, try again.'));
+                $this->Flash->error(__('The message could not be sent. Please, try again.'));
             }
         }
         $chats = $this->Messages->Chats->find('list', ['limit' => 200]);

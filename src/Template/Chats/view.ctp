@@ -1,6 +1,6 @@
 <?php
   echo $this->Html->div('chatname',$chat->product->name);
-  $currentuser = 1; //TODO: ELIMINAR ESTO
+  $currentuser = $this->request->session()->read('Auth.User');
 ?>
 <!--
         <tr>
@@ -19,7 +19,10 @@
   -->
         <?php if (!empty($chat->messages)): ?>
             <?php foreach ($chat->messages as $messages):
-              if($messages->sender == 0 && $currentuser == $chat->product->user_id){
+              if($messages->sender == 0 && $currentuser['id'] == $chat->product->user_id){
+                $messageclass = "sender";
+              }
+              elseif($messages->sender == 1 && $currentuser['id'] == $chat->user_id){
                 $messageclass = "sender";
               }
               else {
@@ -48,6 +51,18 @@
               endif;
             ?>
       <div class="newmessage">
+        <?= $this->Form->create($message, ['url' => ['controller' => 'messages', 'action' => 'add', $chat->id]]); ?>
         <?= $this->Form->textarea('content', array('div' => false, 'label' => false,  'escape' => false,'class' =>'messagetextarea')); ?>
-        <?= $this->Form->button(__('Send'), array('class' =>'messagebutton')) ?>
+        <?= $this->Form->button(__('Send'), array('class' =>'messagebutton')); ?>
+        <?php
+          if($currentuser['id'] == $chat->user_id)
+          {
+            echo $this->Form->hidden('sender', array('value' => 1));
+          }
+          else
+          {
+            echo $this->Form->hidden('sender', array('value' => 0));
+          }
+        ?>
+        <?= $this->Form->end(); ?>
       </div>

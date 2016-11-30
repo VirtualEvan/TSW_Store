@@ -28,7 +28,7 @@ class UsersController extends AppController
             return false;
         }
 
-        // The owner of an product can edit and delete it
+        // The user can edit itself
         if (in_array($this->request->action, ['edit', 'delete', 'view'])) {
             $userId = (int)$this->request->params['pass'][0];
             if ($userId == $user['id']) {

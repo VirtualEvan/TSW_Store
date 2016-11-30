@@ -11,6 +11,23 @@ use App\Controller\AppController;
 class ChatsController extends AppController
 {
 
+    public function isAuthorized($user)
+    {
+        // All registered users can add chats
+        if (in_array($this->request->action, ['index', 'add'])) {
+            return true;
+        }
+
+        // Only the owner of the cat can view it
+        if (in_array($this->request->action, ['view'])) {
+            $chatId = (int)$this->request->params['pass'][0];
+            if ($this->Chats->isOwnedBy($chatId, $user['id'])) {
+                return true;
+            }
+        }
+        return parent::isAuthorized($user);
+    }
+
     /**
      * Index method
      *
@@ -36,11 +53,13 @@ class ChatsController extends AppController
      */
     public function view($id = null)
     {
+        $message = $this->Chats->Messages->newEntity();
         $chat = $this->Chats->get($id, [
             'contain' => ['Users', 'Products', 'Messages']
         ]);
 
         $this->set('chat', $chat);
+        $this->set('message',$message);
         $this->set('_serialize', ['chat']);
     }
 

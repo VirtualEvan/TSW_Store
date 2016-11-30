@@ -29,7 +29,7 @@ class ProductsController extends AppController
             return true;
         }
 
-        // The owner of an product can edit and delete it
+        // The owner of a product can edit and delete it
         if (in_array($this->request->action, ['edit', 'delete'])) {
             $productId = (int)$this->request->params['pass'][0];
             if ($this->Products->isOwnedBy($productId, $user['id'])) {

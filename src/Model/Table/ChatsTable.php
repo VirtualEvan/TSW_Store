@@ -80,4 +80,11 @@ class ChatsTable extends Table
 
         return $rules;
     }
+
+    public function isOwnedBy($chatId, $userId)
+    {
+        //$productId = $chats->find()->select('product_id')->where( ['id' => $chatId] );
+        //$sellerId = $products->find()->select('user_id')->where( ['id' => $productId] );
+        return $this->exists(['id' => $chatId, 'user_id' => $userId]);
+    }
 }
