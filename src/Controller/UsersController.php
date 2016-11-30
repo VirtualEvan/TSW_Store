@@ -11,7 +11,7 @@ use Cake\Event\Event;
  */
 class UsersController extends AppController
 {
-  
+
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
@@ -19,6 +19,24 @@ class UsersController extends AppController
         // You should not add the "login" action to allow list. Doing so would
         // cause problems with normal functioning of AuthComponent.
         $this->Auth->allow(['add', 'logout']);
+    }
+
+    public function isAuthorized($user)
+    {
+        // TODO: Registered users can't add new users
+        if ($this->request->action === 'add') {
+            return false;
+        }
+
+        // The owner of an product can edit and delete it
+        if (in_array($this->request->action, ['edit', 'delete', 'view'])) {
+            $userId = (int)$this->request->params['pass'][0];
+            if ($userId == $user['id']) {
+                return true;
+            }
+        }
+
+        return parent::isAuthorized($user);
     }
 
     public function login()

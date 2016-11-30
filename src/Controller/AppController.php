@@ -44,6 +44,7 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
+            'authorize' => ['Controller'],
             'loginRedirect' => [
                 'controller' => 'Products',
                 'action' => 'index'
@@ -55,6 +56,12 @@ class AppController extends Controller
         ]);
     }
 
+    public function isAuthorized($user)
+    {
+        // Default deny
+        return false;
+    }
+
 
     /**
      * Before render callback.
@@ -64,6 +71,7 @@ class AppController extends Controller
      */
     public function beforeFilter(Event $event)
     {
+        //Empty by now
         //$this->Auth->allow(['index', 'view', 'display']);
     }
 

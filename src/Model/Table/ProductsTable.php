@@ -95,4 +95,9 @@ class ProductsTable extends Table
 
         return $rules;
     }
+
+    public function isOwnedBy($productId, $userId)
+    {
+        return $this->exists(['id' => $productId, 'user_id' => $userId]);
+    }
 }
