@@ -12,8 +12,8 @@
  * @since         0.10.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
 $cakeDescription = 'Traepaka';
+$currentuser = $this->request->session()->read('Auth.User');
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,6 +41,7 @@ $cakeDescription = 'Traepaka';
             array('controller' => 'Products', 'action' => 'index'),
             array('class' => 'indexlink', 'escape' => false)
           );
+
       ?>
     </div>
     <ul class="list_nav">
@@ -51,8 +52,22 @@ $cakeDescription = 'Traepaka';
           </div>
           <div class="user">
             <?php echo $this->Html->link(
-                  'Manuel Pérez'.$this->Html->image('gear_icon.svg', array('alt' => 'Configure', 'class' => 'navimg', 'escape' => false)),
-                  array('controller' => 'Products', 'action' => 'index'),
+                  $currentuser['name'],
+                  array('controller' => 'Users', 'action' => 'view', $currentuser['id']),
+                  array('class' => 'linkprofile', 'escape' => false)
+                );
+            ?>
+
+            <?php echo $this->Html->link(
+                  $this->Html->image('logout.svg', array('alt' => __('Configure'), 'class' => 'logout', 'escape' => false)),
+                  array('controller' => 'Users', 'action' => 'logout'),
+                  array('class' => 'linkprofile', 'escape' => false)
+                );
+            ?>
+
+            <?php echo $this->Html->link(
+                  $this->Html->image('gear_icon.svg', array('alt' => __('Configure'), 'class' => 'navimg', 'escape' => false)),
+                  array('controller' => 'Users', 'action' => 'edit', $currentuser['id']),
                   array('class' => 'linkprofile', 'escape' => false)
                 );
             ?>
@@ -61,7 +76,7 @@ $cakeDescription = 'Traepaka';
       </li>
       <li>
         <?php echo $this->Html->link(
-              'Añadir producto'.$this->Html->image('add_icon.svg', array('alt' => 'Add product', 'class' => 'navimg', 'escape' => false)),
+              __('Añadir producto').$this->Html->image('add_icon.svg', array('alt' => __('Add product'), 'class' => 'navimg', 'escape' => false)),
               array('controller' => 'Products', 'action' => 'add'),
               array('class' => 'nav', 'escape' => false)
             );
@@ -69,15 +84,15 @@ $cakeDescription = 'Traepaka';
       </li>
       <li>
         <?php echo $this->Html->link(
-              'Mis productos'.$this->Html->image('box_icon.svg', array('alt' => 'My products', 'class' => 'navimg', 'escape' => false)),
-              array('controller' => 'Products', 'action' => 'index'),
+              __('Mis productos').$this->Html->image('box_icon.svg', array('alt' => __('My products'), 'class' => 'navimg', 'escape' => false)),
+              array('controller' => 'Products', 'action' => 'own', $currentuser['id']),
               array('class' => 'nav', 'escape' => false)
             );
         ?>
       </li>
       <li>
         <?php echo $this->Html->link(
-              'Chats'.$this->Html->image('chat_icon.svg', array('alt' => 'Chats', 'class' => 'navimg', 'escape' => false)),
+              __('Chats').$this->Html->image('chat_icon.svg', array('alt' => __('Chats'), 'class' => 'navimg', 'escape' => false)),
               array('controller' => 'Chats', 'action' => 'index'),
               array('class' => 'nav', 'escape' => false)
             );
@@ -104,38 +119,38 @@ $cakeDescription = 'Traepaka';
           <div class="footercolumn">
               <ul class="footercontent">
                   <li class="footertitle">
-                      © Traepaká 2016
+                      <?= __('© Traepaká 2016') ?>
                   </li>
                   <li>
-                      Normas
+                      <?= __('Normas') ?>
                   </li>
                   <li>
-                      Contacto
+                      <?= __('Contacto') ?>
                   </li>
                   <li>
-                      Información Legal
+                      <?= __('Información Legal') ?>
                   </li>
                   <li>
-                      Política de cookies
+                      <?= __('Política de cookies') ?>
                   </li>
               </ul>
           </div>
           <div class="footercolumn">
               <ul class="footercontent secciones">
                   <li class="footertitle">
-                      Secciones
+                      <?= __('Secciones') ?>
                   </li>
                   <li>
-                      Portada
+                      <?= __('Portada') ?>
                   </li>
                   <li>
-                      Destacados
+                      <?= __('Destacados') ?>
                   </li>
                   <li>
-                      Nuevos
+                      <?= __('Nuevos') ?>
                   </li>
                   <li>
-                      Comentarios
+                      <?= __('Comentarios') ?>
                   </li>
               </ul>
           </div>
@@ -145,16 +160,16 @@ $cakeDescription = 'Traepaka';
                       Manuel
                   </li>
                   <li>
-                      Perfil
+                      <?= __('Perfil') ?>
                   </li>
                   <li>
-                      Nuevo producto
+                      <?= __('Nuevo producto') ?>
                   </li>
                   <li>
-                      Mis productos
+                      <?= __('Mis productos') ?>
                   </li>
                   <li>
-                      Chats
+                      <?= __('Chats') ?>
                   </li>
               </ul>
           </div>
@@ -163,7 +178,7 @@ $cakeDescription = 'Traepaka';
           <div class="footercolumn">
               <ul class="footercontent redes">
                   <li class="footertitle">
-                      Redes
+                      <?= __('Redes') ?>
                   </li>
                   <li>
                       <?= $this->Html->image('facebook_icon.svg', array('alt' => 'Facebook', 'class' => 'footerimg', 'escape' => false)) ?>
@@ -174,7 +189,7 @@ $cakeDescription = 'Traepaka';
                       Twitter
                   </li>
                   <li>
-                      <?= $this->Html->image('youtube_icon.svg', array('alt' => 'Profile', 'class' => 'footerimg', 'escape' => false)) ?>
+                      <?= $this->Html->image('youtube_icon.svg', array('alt' => __('Profile'), 'class' => 'footerimg', 'escape' => false)) ?>
                       Youtube
                   </li>
               </ul>
@@ -182,15 +197,15 @@ $cakeDescription = 'Traepaka';
           <div class="footercolumn">
               <ul class="footercontent usuarios">
                   <li class="footertitle">
-                      Usuarios
+                      <?= __('Usuarios') ?>
                   </li>
                   <li>
-                      <?= $this->Html->image('users_blue_icon.svg', array('alt' => 'Users', 'class' => 'footerimg', 'escape' => false)) ?>
-                      359553 miembros
+                      <?= $this->Html->image('users_blue_icon.svg', array('alt' => __('Users'), 'class' => 'footerimg', 'escape' => false)) ?>
+                      359553 <?= __('miembros') ?>
                   </li>
                   <li>
-                      <?= $this->Html->image('users_green_icon.svg', array('alt' => 'Connected', 'class' => 'footerimg', 'escape' => false)) ?>
-                      15028 online
+                      <?= $this->Html->image('users_green_icon.svg', array('alt' => __('Connected'), 'class' => 'footerimg', 'escape' => false)) ?>
+                      15028 <?= __('online') ?>
                   </li>
               </ul>
           </div>

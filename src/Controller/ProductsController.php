@@ -25,7 +25,7 @@ class ProductsController extends AppController
     public function isAuthorized($user)
     {
         // All registered users can add products
-        if ($this->request->action === 'add') {
+        if (in_array($this->request->action, ['add', 'own'])) {
             return true;
         }
 
@@ -52,6 +52,21 @@ class ProductsController extends AppController
         ];
         $products = $this->paginate($this->Products);
 
+        $this->set(compact('products'));
+        $this->set('_serialize', ['products']);
+    }
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function own($id = null)
+    {
+        $this->paginate = [
+            'contain' => ['Users']
+        ];
+        $products = $this->paginate($this->Products->findByUserId($id));
         $this->set(compact('products'));
         $this->set('_serialize', ['products']);
     }
