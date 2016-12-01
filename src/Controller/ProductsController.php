@@ -168,5 +168,6 @@ class ProductsController extends AppController
     ));
     $products = $this->Products->find("all", array("conditions" => $cond));
     $this->set(compact("products", "keyword"));
+    $this->render('index');
     }
 }
