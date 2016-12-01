@@ -65,26 +65,29 @@ class ChatsController extends AppController
 
     /**
      * Add method
+     * @param string|null $id Product id.
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($id=null)
     {
         $chat = $this->Chats->newEntity();
-        if ($this->request->is('post')) {
-            $chat = $this->Chats->patchEntity($chat, $this->request->data);
-            if ($this->Chats->save($chat)) {
-                $this->Flash->success(__('The chat has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error(__('The chat could not be saved. Please, try again.'));
-            }
+        if(!$this->Chats->alreadyExists($id, $this->Auth->user('id')))
+        {
+          $chat = $this->Chats->patchEntity($chat, $this->request->data);
+          $chat->product_id = $id;
+          $chat->user_id = $this->Auth->user('id');
+          if ($this->Chats->save($chat)) {
+              return $this->redirect(['action' => 'view', $chat->id]);
+          } else {
+              $this->Flash->error(__('The chat could not be saved. Please, try again.'));
+          }
+        } else {
+            $this->Flash->error(__('A chat for this product already exists.'));
         }
-        $users = $this->Chats->Users->find('list', ['limit' => 200]);
-        $products = $this->Chats->Products->find('list', ['limit' => 200]);
-        $this->set(compact('chat', 'users', 'products'));
-        $this->set('_serialize', ['chat']);
+
+        return $this->redirect(['controller' => 'products', 'action' => 'view', $id]);
     }
 
     /**

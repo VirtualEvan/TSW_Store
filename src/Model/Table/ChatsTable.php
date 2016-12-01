@@ -87,4 +87,9 @@ class ChatsTable extends Table
         //$sellerId = $products->find()->select('user_id')->where( ['id' => $productId] );
         return $this->exists(['id' => $chatId, 'user_id' => $userId]);
     }
+
+    public function alreadyExists($productId, $userId)
+    {
+        return $this->exists(['product_id' => $productId, 'user_id' => $userId]);
+    }
 }

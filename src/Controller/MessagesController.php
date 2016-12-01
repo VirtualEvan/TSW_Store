@@ -67,8 +67,6 @@ class MessagesController extends AppController
             $message = $this->Messages->patchEntity($message, $this->request->data);
             $message->chat_id = $id;
             if ($this->Messages->save($message)) {
-                $this->Flash->success(__('The message has been sent.'));
-
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The message could not be sent. Please, try again.'));

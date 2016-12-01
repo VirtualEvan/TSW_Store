@@ -60,20 +60,20 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `traepaka`.`chats` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `user_id` INT NOT NULL,
-  `product_id` INT NOT NULL,
+  `user_id` INT NULL,
+  `product_id` INT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_chat_buyer_idx` (`user_id` ASC),
   INDEX `fk_chat_product_idx` (`product_id` ASC),
   CONSTRAINT `fk_chat_buyer`
     FOREIGN KEY (`user_id`)
     REFERENCES `traepaka`.`users` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE SET NULL
     ON UPDATE CASCADE,
   CONSTRAINT `fk_chat_product`
     FOREIGN KEY (`product_id`)
     REFERENCES `traepaka`.`products` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE SET NULL
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
