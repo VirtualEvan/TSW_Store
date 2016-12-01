@@ -148,6 +148,87 @@ main {
   height: 20px;
 }
 
+.navlogin {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    vertical-align: top;
+    background: white;
+    font-weight: normal;
+    border: 1px solid #63baf9;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    margin-bottom: 8%;
+}
+
+.loginbutton {
+    border: none;
+    padding: 8px 15px 8px 15px;
+    background: #00ffab;
+    color: #fff;
+    box-shadow: 1px 1px 4px #DADADA;
+    -moz-box-shadow: 1px 1px 4px #DADADA;
+    -webkit-box-shadow: 1px 1px 4px #DADADA;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    cursor: pointer;
+}
+
+.loginbutton:hover {
+    background: #00ff75;
+    color: #fff;
+}
+
+.registerbutton {
+    display: inline;
+    border: none;
+    padding: 8px 15px 8px 15px;
+    background: #ffc700;
+    color: #fff;
+    box-shadow: 1px 1px 4px #DADADA;
+    -moz-box-shadow: 1px 1px 4px #DADADA;
+    -webkit-box-shadow: 1px 1px 4px #DADADA;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    cursor: pointer;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.registerbutton:hover {
+    background: #ffb000;
+    color: #fff;
+}
+
+.inputdiv{
+  padding: 5px;
+}
+
+.input{
+   box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   border: 1px solid #C2C2C2;
+   box-shadow: 1px 1px 4px #EBEBEB;
+   -moz-box-shadow: 1px 1px 4px #EBEBEB;
+   -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+   border-radius: 3px;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   padding: 7px;
+   outline: none;
+   display: block;
+   width: 100%;
+}
+
+.input:focus{
+    border: 1px solid #63baf9;
+}
+
 
 /* MAIN */
 

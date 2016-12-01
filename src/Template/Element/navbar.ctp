@@ -1,0 +1,70 @@
+<?php
+  $currentuser = $this->request->session()->read('Auth.User');
+?>
+
+<nav class="mainnavigation">
+  <div class="logo">
+    <?php echo $this->Html->link(
+          $this->Html->image('icon.svg', array('alt' => 'Logo', 'class' => 'logoimg', 'escape' => false)).'Traepaká',
+          array('controller' => 'Products', 'action' => 'index'),
+          array('class' => 'indexlink', 'escape' => false)
+        );
+
+    ?>
+  </div>
+  <ul class="list_nav">
+    <li>
+      <div class="profile">
+        <div class="profileimgblock">
+          <?= $this->Html->image('profile_img.svg', array('alt' => 'Profile', 'class' => 'profileimg', 'escape' => false)) ?>
+        </div>
+        <div class="user">
+          <?php echo $this->Html->link(
+                $currentuser['name'],
+                array('controller' => 'Users', 'action' => 'view', $currentuser['id']),
+                array('class' => 'linkprofile', 'escape' => false)
+              );
+          ?>
+
+          <?php echo $this->Html->link(
+                $this->Html->image('logout.svg', array('alt' => __('Configure'), 'class' => 'logout', 'escape' => false)),
+                array('controller' => 'Users', 'action' => 'logout'),
+                array('class' => 'linkprofile', 'escape' => false)
+              );
+          ?>
+
+          <?php echo $this->Html->link(
+                $this->Html->image('gear_icon.svg', array('alt' => __('Configure'), 'class' => 'navimg', 'escape' => false)),
+                array('controller' => 'Users', 'action' => 'edit', $currentuser['id']),
+                array('class' => 'linkprofile', 'escape' => false)
+              );
+          ?>
+        </div>
+      </div>
+    </li>
+    <li>
+      <?php echo $this->Html->link(
+            __('Añadir producto').$this->Html->image('add_icon.svg', array('alt' => __('Add product'), 'class' => 'navimg', 'escape' => false)),
+            array('controller' => 'Products', 'action' => 'add'),
+            array('class' => 'nav', 'escape' => false)
+          );
+      ?>
+    </li>
+    <li>
+      <?php echo $this->Html->link(
+            __('Mis productos').$this->Html->image('box_icon.svg', array('alt' => __('My products'), 'class' => 'navimg', 'escape' => false)),
+            array('controller' => 'Products', 'action' => 'own', $currentuser['id']),
+            array('class' => 'nav', 'escape' => false)
+          );
+      ?>
+    </li>
+    <li>
+      <?php echo $this->Html->link(
+            __('Chats').$this->Html->image('chat_icon.svg', array('alt' => __('Chats'), 'class' => 'navimg', 'escape' => false)),
+            array('controller' => 'Chats', 'action' => 'index'),
+            array('class' => 'nav', 'escape' => false)
+          );
+      ?>
+    </li>
+  </ul>
+</nav>
