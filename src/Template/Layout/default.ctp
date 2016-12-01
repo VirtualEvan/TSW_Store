@@ -44,10 +44,23 @@ $currentuser = $this->request->session()->read('Auth.User');
   ?>
   <main>
     <header class="header">
-        <form action="search.php" method="post">
-            <input type="text" class="searchbar" placeholder="Search">
-            <input type="submit" class="searchbutton" value="Search">
-        </form>
+
+        <?php
+            echo $this->Form->create("Products", array(
+              'url' => ['controller' => 'products', 'action' => 'search']
+            ));
+            echo $this->Form->input("keyword", array(
+                "label" => "",
+                "type" => "search",
+                "placeholder" => "Buscar...",
+                "class" => "searchbar"
+            ));
+            echo $this->Form->submit("Buscar", array(
+                "class" => "searchbutton"
+            ));
+            echo $this->Form->end();
+        ?>
+
     </header>
 
     <?= $this->Flash->render() ?>

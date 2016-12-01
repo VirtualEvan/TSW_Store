@@ -19,7 +19,7 @@ class ProductsController extends AppController
         // Allow users to register and logout.
         // You should not add the "login" action to allow list. Doing so would
         // cause problems with normal functioning of AuthComponent.
-        $this->Auth->allow(['index', 'view']);
+        $this->Auth->allow(['index', 'view','search']);
     }
 
     public function isAuthorized($user)
@@ -156,5 +156,17 @@ class ProductsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function search() {
+
+      $keyword = $this->request->data;
+    $keyword = $keyword["keyword"];
+    $cond = array("OR" => array(
+        "Products.name LIKE '%$keyword%'",
+        "Products.description LIKE '%$keyword%'"
+    ));
+    $products = $this->Products->find("all", array("conditions" => $cond));
+    $this->set(compact("products", "keyword"));
     }
 }
