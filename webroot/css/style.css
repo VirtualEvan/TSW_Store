@@ -34,6 +34,39 @@ main {
     order: 3;
 }
 
+/* FLASH */
+
+.messagecontainer {
+  margin-top: 5px;
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.message {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: flex;
+  text-align: center;
+  align-self: center;
+}
+
+.success {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+
 
 /* NAVIGATION */
 
@@ -253,6 +286,7 @@ main {
     padding-right: 3%;
     display: flex;
     flex-flow: row nowrap;
+    margin-bottom: 30px
 }
 
 .header>form {
@@ -296,7 +330,6 @@ main {
 /* MAINCONTENT */
 
 .maincontent {
-    padding-top: 30px;
     padding-left: 3%;
     display: flex;
     flex-flow: row wrap;

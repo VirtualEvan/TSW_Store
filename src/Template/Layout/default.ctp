@@ -45,10 +45,10 @@ $currentuser = $this->request->session()->read('Auth.User');
   <main>
     <?= $this->element('header'); ?>
 
-
     <?= $this->Flash->render() ?>
+
     <article class="maincontent">
-        <?= $this->fetch('content') ?>
+      <?= $this->fetch('content') ?>
     </article>
   </main>
 
