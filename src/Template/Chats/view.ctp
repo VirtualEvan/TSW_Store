@@ -52,7 +52,7 @@
             ?>
       <div class="newmessage">
         <?= $this->Form->create($message, ['url' => ['controller' => 'messages', 'action' => 'add', $chat->id]]); ?>
-        <?= $this->Form->textarea('content', array('label' => false, 'class' =>'messagetextarea')); ?>
+        <?= $this->Form->textarea('content', array('label' => false, 'class' =>'messagetextarea', 'rows' => '3')); ?>
         <?= $this->Form->button(__('Send'), array('class' =>'messagebutton')); ?>
         <?php
           if($currentuser['id'] == $chat->user_id)
