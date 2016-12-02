@@ -34,6 +34,39 @@ main {
     order: 3;
 }
 
+/* FLASH */
+
+.messagecontainer {
+  margin-top: 5px;
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.message {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: flex;
+  text-align: center;
+  align-self: center;
+}
+
+.success {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+
 
 /* NAVIGATION */
 
@@ -253,6 +286,7 @@ main {
     padding-right: 3%;
     display: flex;
     flex-flow: row nowrap;
+    margin-bottom: 30px
 }
 
 .header>form {
@@ -296,7 +330,6 @@ main {
 /* MAINCONTENT */
 
 .maincontent {
-    padding-top: 30px;
     padding-left: 3%;
     display: flex;
     flex-flow: row wrap;
@@ -562,29 +595,50 @@ main {
 .newmessage {
   display: inline-block;
   width: 100%;
+  position: relative;
 }
 
 .messagetextarea {
+  float: left;
   display: inline-block;
   resize: none;
   border: none;
-  padding: 0px;
   margin: 0px;
   box-shadow:0px 0px 0px 1px black inset;
   width: calc(100% - 80px);
+  height: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #C2C2C2;
+  box-shadow: 1px 1px 4px #EBEBEB;
+  -moz-box-shadow: 1px 1px 4px #EBEBEB;
+  -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  padding: 7px;
+  outline: none;
+}
+
+.messagetextarea:focus{
+      border: 1px solid #63baf9;
 }
 
 .messagebutton {
+  position: absolute;
+  float: right;
   display: inline-block;
-  float: left;
   background-color: #008CBA;
-  border: none;
   color: white;
   font-size: 16px;
   padding: 0px;
   margin: 0px;
   width: 80px;
-  height: 100%
+  height: 100%;
+  border-radius: 3px;
+  border-color: #008CBA;
+  cursor: pointer;
 }
 
 /* FOOTER */
@@ -697,6 +751,7 @@ main {
     }
     .searchbutton {
         width: 130px;
+        cursor: pointer;
         flex: 0 0 130px;
     }
     /* MAINCONTENT */

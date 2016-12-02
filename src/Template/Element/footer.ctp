@@ -10,35 +10,35 @@
                     <?= __('© Traepaká 2016') ?>
                 </li>
                 <li>
-                    <?= __('Normas') ?>
+                    <?= __('Rules') ?>
                 </li>
                 <li>
-                    <?= __('Contacto') ?>
+                    <?= __('Contact') ?>
                 </li>
                 <li>
-                    <?= __('Información Legal') ?>
+                    <?= __('Legal information') ?>
                 </li>
                 <li>
-                    <?= __('Política de cookies') ?>
+                    <?= __('Cookies policy') ?>
                 </li>
             </ul>
         </div>
         <div class="footercolumn">
             <ul class="footercontent secciones">
                 <li class="footertitle">
-                    <?= __('Secciones') ?>
+                    <?= __('Sections') ?>
                 </li>
                 <li>
-                    <?= __('Portada') ?>
+                    <?= __('Home') ?>
                 </li>
                 <li>
-                    <?= __('Destacados') ?>
+                    <?= __('Featured') ?>
                 </li>
                 <li>
-                    <?= __('Nuevos') ?>
+                    <?= __('Recent') ?>
                 </li>
                 <li>
-                    <?= __('Comentarios') ?>
+                    <?= __('Comments') ?>
                 </li>
             </ul>
         </div>
@@ -48,13 +48,13 @@
                     <?= $currentuser['name'] ?>
                 </li>
                 <li>
-                    <?= __('Perfil') ?>
+                    <?= __('Profile') ?>
                 </li>
                 <li>
-                    <?= __('Nuevo producto') ?>
+                    <?= __('New product') ?>
                 </li>
                 <li>
-                    <?= __('Mis productos') ?>
+                    <?= __('My products') ?>
                 </li>
                 <li>
                     <?= __('Chats') ?>
@@ -66,7 +66,7 @@
         <div class="footercolumn">
             <ul class="footercontent redes">
                 <li class="footertitle">
-                    <?= __('Redes') ?>
+                    <?= __('Networks') ?>
                 </li>
                 <li>
                     <?= $this->Html->image('facebook_icon.svg', array('alt' => 'Facebook', 'class' => 'footerimg', 'escape' => false)) ?>
@@ -85,11 +85,11 @@
         <div class="footercolumn">
             <ul class="footercontent usuarios">
                 <li class="footertitle">
-                    <?= __('Usuarios') ?>
+                    <?= __('Users') ?>
                 </li>
                 <li>
                     <?= $this->Html->image('users_blue_icon.svg', array('alt' => __('Users'), 'class' => 'footerimg', 'escape' => false)) ?>
-                    359553 <?= __('miembros') ?>
+                    359553 <?= __('members') ?>
                 </li>
                 <li>
                     <?= $this->Html->image('users_green_icon.svg', array('alt' => __('Connected'), 'class' => 'footerimg', 'escape' => false)) ?>

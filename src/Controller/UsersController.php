@@ -82,6 +82,7 @@ class UsersController extends AppController
         $user = $this->Users->get($id, [
             'contain' => ['Chats', 'Products']
         ]);
+        unset($user->password);
 
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
@@ -140,6 +141,7 @@ class UsersController extends AppController
         $user = $this->Users->get($id, [
             'contain' => []
         ]);
+        unset($user->password);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
