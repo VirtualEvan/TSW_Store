@@ -174,7 +174,7 @@ main {
 .loginbutton {
     border: none;
     padding: 8px 15px 8px 15px;
-    background: #00ff75;
+    background: #05d665;
     color: #fff;
     box-shadow: 1px 1px 4px #DADADA;
     -moz-box-shadow: 1px 1px 4px #DADADA;
@@ -187,7 +187,7 @@ main {
 }
 
 .loginbutton:hover {
-    background: #00ffab;
+    background: #06e46c;
     color: #fff;
 }
 
@@ -195,7 +195,7 @@ main {
     display: inline;
     border: none;
     padding: 8px 15px 8px 15px;
-    background: #ffb000;
+    background: #eea707;
     color: #fff;
     box-shadow: 1px 1px 4px #DADADA;
     -moz-box-shadow: 1px 1px 4px #DADADA;
@@ -209,8 +209,12 @@ main {
 }
 
 .registerbutton:hover {
-    background: #ffc700;
+    background: #e9b706;
     color: #fff;
+}
+
+.nounderline {
+  text-decoration: none;
 }
 
 .inputdiv{

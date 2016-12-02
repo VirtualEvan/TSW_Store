@@ -18,7 +18,10 @@
         <?= $this->Form->input('username', array('class' => 'input')) ?>
         <?= $this->Form->input('password', array('class' => 'input')) ?>
         <?= $this->Html->div('inputdiv', $this->Form->button(__('Login'), array('class' => 'loginbutton'))
-      .$this->Html->link(__('Register'), array('controller' => 'Users', 'action' => 'add'), array('class' => 'registerbutton', 'escape' => false)));
+      .$this->Html->link(
+          $this->Form->input(__('Register'), array('templates' => ['inputContainer' => '{{content}}'], 'type'=>'button', 'class' => 'registerbutton', 'label' => false)),
+          array('controller' => 'Users', 'action' => 'add'),
+          array('class' => 'nounderline', 'escape' => false)));
     ?>
     <?= $this->Form->end() ?>
   </div>
