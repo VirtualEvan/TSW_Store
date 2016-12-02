@@ -143,7 +143,25 @@ class UsersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been modified.'));
+                if (!empty($this->request->data['upload']['name']))
+                {
+                    $file = $this->request->data['upload'];
+                    $extension = substr(strtolower(strrchr($file['name'], '.')), 1);
+                    $allowedExtensions = array('jpg', 'jpeg', 'png');
+
+                    $imgName = $user->id;
+
+                    if (in_array($extension, $allowedExtensions)) {
+                        //do the actual uploading of the file. First arg is the tmp name, second arg is
+                        //where we are putting it
+                        move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/Users/' . $imgName);
+                    }
+                    else {
+                      $this->Flash->success(__('Invalid image format.'));
+                    }
+                }
+
+                $this->Flash->success(__('The user data has been modified.'));
                 $this->Auth->logout();
                 $this->Auth->setUser($user);
 
@@ -168,6 +186,7 @@ class UsersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
         if ($this->Users->delete($user)) {
+            unlink(WWW_ROOT . 'img/Users/' . $user->id);
             $this->Auth->logout();
             $this->Flash->success(__('The user has been deleted.'));
             return $this->redirect(['controller' => 'products', 'action' => 'index']);
