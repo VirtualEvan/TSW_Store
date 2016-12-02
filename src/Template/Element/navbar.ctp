@@ -65,7 +65,7 @@
     <li>
       <?php echo $this->Html->link(
             __('Chats').$this->Html->image('chat_icon.svg', array('alt' => __('Chats'), 'class' => 'navimg', 'escape' => false)),
-            array('controller' => 'Chats', 'action' => 'index'),
+            array('controller' => 'Chats', 'action' => 'mine', $currentuser['id']),
             array('class' => 'nav', 'escape' => false)
           );
       ?>

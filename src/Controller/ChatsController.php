@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Controller\Products;
+use Cake\Event\Event;
 
 /**
  * Chats Controller
@@ -11,10 +13,19 @@ use App\Controller\AppController;
 class ChatsController extends AppController
 {
 
+  public function beforeFilter(Event $event)
+  {
+      parent::beforeFilter($event);
+      // Allow users to register and logout.
+      // You should not add the "login" action to allow list. Doing so would
+      // cause problems with normal functioning of AuthComponent.
+      $this->Auth->allow(['index', 'view', 'mine']);
+  }
+
     public function isAuthorized($user)
     {
         // All registered users can add chats
-        if (in_array($this->request->action, ['index', 'add'])) {
+        if (in_array($this->request->action, ['index', 'add','mine'])) {
             return true;
         }
 
@@ -36,12 +47,28 @@ class ChatsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users', 'Products']
+            'contain' => ['Users','Products']
         ];
         $chats = $this->paginate($this->Chats);
 
         $this->set(compact('chats'));
         $this->set('_serialize', ['chats']);
+    }
+
+    public function mine($id = null)
+    {
+        $this->paginate = [
+            'contain' => ['Users','Products']
+        ];
+        $cond = array("OR" => array(
+            "Chats.user_id LIKE '$id'",
+            "Products.user_id = $id AND Chats.product_id = Products.id"
+        ));
+        $chats = $this->Chats->find("all", array('contain' => array('Products' => array('conditions'=>$cond))));
+
+        $this->set(compact('chats'));
+        $this->set('_serialize', ['chats']);
+        $this->render('index');
     }
 
     /**
