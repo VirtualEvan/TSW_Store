@@ -17,8 +17,7 @@
     <?= $this->Form->create(null, ['templates' => ['inputContainer' => '<div class="inputdiv" >{{content}}</div>'],'url' => ['controller' => 'Users', 'action' => 'login']]) ?>
         <?= $this->Form->input('username', array('class' => 'input')) ?>
         <?= $this->Form->input('password', array('class' => 'input')) ?>
-    <?= $this->Html->div('inputdiv',
-      $this->Form->button(__('Login'), array('class' => 'loginbutton'))
+        <?= $this->Html->div('inputdiv', $this->Form->button(__('Login'), array('class' => 'loginbutton'))
       .$this->Html->link(__('Register'), array('controller' => 'Users', 'action' => 'add'), array('class' => 'registerbutton', 'escape' => false)));
     ?>
     <?= $this->Form->end() ?>

@@ -25,7 +25,7 @@ class ProductsController extends AppController
     public function isAuthorized($user)
     {
         // All registered users can add products
-        if (in_array($this->request->action, ['add', 'own'])) {
+        if (in_array($this->request->action, ['add', 'mine'])) {
             return true;
         }
 
@@ -61,7 +61,7 @@ class ProductsController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
-    public function own($id = null)
+    public function mine($id = null)
     {
         $this->paginate = [
             'contain' => ['Users']
@@ -69,6 +69,7 @@ class ProductsController extends AppController
         $products = $this->paginate($this->Products->findByUserId($id));
         $this->set(compact('products'));
         $this->set('_serialize', ['products']);
+        $this->render('index');
     }
 
     /**
@@ -95,9 +96,31 @@ class ProductsController extends AppController
      */
     public function add()
     {
+
         $product = $this->Products->newEntity();
-        if ($this->request->is('post')) {
+        if ($this->request->is('post'))
+        {
+
+            $file = $this->request->data['upload'];
+            $extension = substr(strtolower(strrchr($file['name'], '.')), 1);
+            $allowedExtensions = array('jpg', 'jpeg', 'png');
+
+            $hashName = time() . "_" . rand(000000, 999999);
+
             $product = $this->Products->patchEntity($product, $this->request->data);
+            if (in_array($extension, $allowedExtensions)) {
+                //prepare the filename for database entry
+                $imageFileName = $hashName . '.' . $extension;
+
+                //do the actual uploading of the file. First arg is the tmp name, second arg is
+                //where we are putting it
+                move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/Products/' . $imageFileName);
+
+                $product->image = $imageFileName;
+            }
+
+            $product->user_id = $this->Auth->user('id');
+
             if ($this->Products->save($product)) {
                 $this->Flash->success(__('The product has been saved.'));
 
@@ -123,9 +146,36 @@ class ProductsController extends AppController
         $product = $this->Products->get($id, [
             'contain' => []
         ]);
+        $actualImage = $product->image;
         if ($this->request->is(['patch', 'post', 'put'])) {
             $product = $this->Products->patchEntity($product, $this->request->data);
+
+            if (!empty($this->request->data['upload']['name']))
+            {
+                $file = $this->request->data['upload'];
+                $extension = substr(strtolower(strrchr($file['name'], '.')), 1);
+                $allowedExtensions = array('jpg', 'jpeg', 'png');
+
+                $hashName = time() . "_" . rand(000000, 999999);
+
+                if (in_array($extension, $allowedExtensions)) {
+                    //prepare the filename for database entry
+                    $imageFileName = $hashName . '.' . $extension;
+
+                    //do the actual uploading of the file. First arg is the tmp name, second arg is
+                    //where we are putting it
+                    move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/Products/' . $imageFileName);
+
+                    $product->image = $imageFileName;
+                }
+            }
+
+            $product->user_id = $this->Auth->user('id');
+
             if ($this->Products->save($product)) {
+                if (!empty($this->request->data['upload']['name'])) {
+                    unlink(WWW_ROOT . 'img/Products/' . $actualImage);
+                }
                 $this->Flash->success(__('The product has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
@@ -150,6 +200,7 @@ class ProductsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $product = $this->Products->get($id);
         if ($this->Products->delete($product)) {
+            unlink(WWW_ROOT . 'img/Products/' . $product->image);
             $this->Flash->success(__('The product has been deleted.'));
         } else {
             $this->Flash->error(__('The product could not be deleted. Please, try again.'));

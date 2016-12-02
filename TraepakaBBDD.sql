@@ -107,19 +107,19 @@ INSERT INTO users (id, name, username, password, email)
 /* Then insert some products for testing: */
 /*ropa*/
 INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (1, 'Producto1', 80,'Descripcion de producto 1','imagen0',1, NOW());
+    VALUES (1, 'Producto1', 80,'Descripcion de producto 1','1480621976_593709.jpg',1, NOW());
 /*telefono roto*/
 INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (2, 'Pruducto2', 100,'Descripcion de producto 2', 'imagen1',1, NOW());
+    VALUES (2, 'Pruducto2', 100,'Descripcion de producto 2', '1480622113_163701.jpg',1, NOW());
 INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (3, 'Pruducto3', 20,'Descripcion de producto 3', 'imagen2',1, NOW());
+    VALUES (3, 'Pruducto3', 20,'Descripcion de producto 3', '1480622757_468638.jpg',1, NOW());
 /*algo de tia*/
 INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (4, 'Pruducto4', 30,'Descripcion de producto 4', 'imagen3',2, NOW());
+    VALUES (4, 'Pruducto4', 30,'Descripcion de producto 4', '1480622951_568403.jpg',2, NOW());
 INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (5, 'Pruducto5', 200,'Descripcion de producto 5', 'imagen4',2, NOW());
+    VALUES (5, 'Pruducto5', 200,'Descripcion de producto 5', '1480622955_946043.jpg',2, NOW());
 INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (6, 'Pruducto6', 1024,'Descripcion de producto 6', 'imagen5',3, NOW());
+    VALUES (6, 'Pruducto6', 1024,'Descripcion de producto 6', '1480623043_580867.jpg',3, NOW());
 
 /* Then insert some chats for testing: */
 INSERT INTO chats (id, user_id, product_id)

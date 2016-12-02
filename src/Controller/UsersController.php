@@ -48,6 +48,7 @@ class UsersController extends AppController
                 return $this->redirect($this->Auth->redirectUrl());
             }
             $this->Flash->error(__('Invalid username or password, try again'));
+            return $this->redirect($this->refer);
         }
     }
 
@@ -97,9 +98,11 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('Successfully registered.'));
+                $user = $this->Auth->identify();
+                $this->Auth->setUser($user);
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'products', 'action' => 'index']);
             } else {
                 $this->Flash->error(__('The user could not be saved. Please, try again.'));
             }
@@ -123,7 +126,9 @@ class UsersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('The user has been modified.'));
+                $this->Auth->logout();
+                $this->Auth->setUser($user);
 
                 return $this->redirect(['action' => 'index']);
             } else {
@@ -146,7 +151,9 @@ class UsersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
         if ($this->Users->delete($user)) {
+            $this->Auth->logout();
             $this->Flash->success(__('The user has been deleted.'));
+            return $this->redirect(['controller' => 'products', 'action' => 'index']);
         } else {
             $this->Flash->error(__('The user could not be deleted. Please, try again.'));
         }

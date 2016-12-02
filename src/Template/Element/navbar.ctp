@@ -44,7 +44,7 @@
     </li>
     <li>
       <?php echo $this->Html->link(
-            __('Añadir producto').$this->Html->image('add_icon.svg', array('alt' => __('Add product'), 'class' => 'navimg', 'escape' => false)),
+            __('Add product').$this->Html->image('add_icon.svg', array('alt' => __('Add product'), 'class' => 'navimg', 'escape' => false)),
             array('controller' => 'Products', 'action' => 'add'),
             array('class' => 'nav', 'escape' => false)
           );
@@ -52,8 +52,8 @@
     </li>
     <li>
       <?php echo $this->Html->link(
-            __('Mis productos').$this->Html->image('box_icon.svg', array('alt' => __('My products'), 'class' => 'navimg', 'escape' => false)),
-            array('controller' => 'Products', 'action' => 'own', $currentuser['id']),
+            __('My products').$this->Html->image('box_icon.svg', array('alt' => __('My products'), 'class' => 'navimg', 'escape' => false)),
+            array('controller' => 'Products', 'action' => 'mine', $currentuser['id']),
             array('class' => 'nav', 'escape' => false)
           );
       ?>
