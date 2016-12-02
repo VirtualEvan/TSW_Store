@@ -351,6 +351,7 @@ main {
 .linkproduct:visited, .linkproduct:link {
     text-decoration: none;
     color: black;
+    align-self: flex-start;
 }
 
 .productimg {
@@ -557,6 +558,26 @@ main {
 }
 
 .chatlink:hover {
+    background-color: rgba(230, 227, 227, 1);
+    color: black;
+}
+
+.chatlink2:visited, .chatlink2:link {
+    background-color: #05d665;
+    border: #03863F 4px solid;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: inherit;
+    padding: 10px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.chatlink2:hover {
     background-color: rgba(230, 227, 227, 1);
     color: black;
 }

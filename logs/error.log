@@ -16410,3 +16410,90 @@ Stack Trace:
 2016-12-02 19:03:31 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
 2016-12-02 19:03:31 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
 >>>>>>> e306ae4ce11459c8e2683971cddc1a8dc436ec3b
+2016-12-02 19:18:04 Warning: Warning (2): unlink(C:\wamp64\www\TSW_Store\webroot\img/Products/1480706126_784729.png): No such file or directory in [C:\wamp64\www\TSW_Store\src\Controller\ProductsController.php, line 202]
+Request URL: /TSW_Store/products/delete/7
+Referer URL: http://localhost/TSW_Store/products/view/7
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 146
+unlink - [internal], line ??
+App\Controller\ProductsController::delete() - APP/Controller\ProductsController.php, line 202
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 435
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 122
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 92
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2016-12-02 19:18:05 Warning: Warning (512): Unable to emit headers. Headers sent in file=C:\wamp64\www\TSW_Store\vendor\cakephp\cakephp\src\Error\Debugger.php line=753 in [C:\wamp64\www\TSW_Store\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 48]
+Request URL: /TSW_Store/products/delete/7
+Referer URL: http://localhost/TSW_Store/products/view/7
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 146
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 48
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 118
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2016-12-02 19:18:05 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\wamp64\www\TSW_Store\vendor\cakephp\cakephp\src\Error\Debugger.php:753) in [C:\wamp64\www\TSW_Store\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 146]
+Request URL: /TSW_Store/products/delete/7
+Referer URL: http://localhost/TSW_Store/products/view/7
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 146
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 146
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 54
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 118
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2016-12-02 19:18:05 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\wamp64\www\TSW_Store\vendor\cakephp\cakephp\src\Error\Debugger.php:753) in [C:\wamp64\www\TSW_Store\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 173]
+Request URL: /TSW_Store/products/delete/7
+Referer URL: http://localhost/TSW_Store/products/view/7
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 146
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 173
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 55
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 118
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2016-12-02 19:18:05 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\wamp64\www\TSW_Store\vendor\cakephp\cakephp\src\Error\Debugger.php:753) in [C:\wamp64\www\TSW_Store\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 173]
+Request URL: /TSW_Store/products/delete/7
+Referer URL: http://localhost/TSW_Store/products/view/7
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 146
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 173
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 55
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 118
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2016-12-02 19:18:05 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\wamp64\www\TSW_Store\vendor\cakephp\cakephp\src\Error\Debugger.php:753) in [C:\wamp64\www\TSW_Store\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 173]
+Request URL: /TSW_Store/products/delete/7
+Referer URL: http://localhost/TSW_Store/products/view/7
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 146
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 173
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 55
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 118
+[main] - ROOT\webroot\index.php, line 37
+
+
+
