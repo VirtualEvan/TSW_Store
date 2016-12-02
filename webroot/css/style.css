@@ -718,6 +718,7 @@ main {
     }
     .searchbutton {
         width: 130px;
+        cursor: pointer;
         flex: 0 0 130px;
     }
     /* MAINCONTENT */
