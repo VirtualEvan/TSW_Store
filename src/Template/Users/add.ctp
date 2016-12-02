@@ -3,5 +3,6 @@
     <?= $this->Form->input('username',['class' => 'input']); ?>
     <?= $this->Form->input('password', ['class' => 'input']); ?>
     <?= $this->Form->input('email', ['class' => 'input']); ?>
+    <?= $this->Html->div('inputdiv',$this->Form->file('upload', ['enctype' => 'multipart/form-data'])); ?>
     <?= $this->Html->div('inputdiv', $this->Form->button(__('Register'), ['class' => 'registerbutton'])) ?>
 <?= $this->Form->end() ?>

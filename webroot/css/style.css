@@ -87,8 +87,16 @@ main {
 }
 
 .profileimg {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #63baf9;
+}
+
+.profileimgdefault {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
 }
 
 .user {
@@ -349,6 +357,7 @@ main {
   height: 35px;
   float: right;
   padding-top: 4px;
+  border-radius: 50%;
 }
 
 .producttextarea {

@@ -98,7 +98,24 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('Successfully registered.'));
+
+                if (!empty($this->request->data['upload']['name']))
+                {
+                    $file = $this->request->data['upload'];
+                    $extension = substr(strtolower(strrchr($file['name'], '.')), 1);
+                    $allowedExtensions = array('jpg', 'jpeg', 'png');
+
+                    $imgName = $user->id;
+
+                    if (in_array($extension, $allowedExtensions)) {
+                        //do the actual uploading of the file. First arg is the tmp name, second arg is
+                        //where we are putting it
+                        move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/Users/' . $imgName);
+                    }
+
+                    $this->Flash->success(__('Successfully registered.'));
+                }
+
                 $user = $this->Auth->identify();
                 $this->Auth->setUser($user);
 

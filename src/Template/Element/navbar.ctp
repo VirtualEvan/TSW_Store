@@ -16,7 +16,11 @@
     <li>
       <div class="profile">
         <div class="profileimgblock">
-          <?= $this->Html->image('profile_img.svg', array('alt' => 'Profile', 'class' => 'profileimg', 'escape' => false)) ?>
+          <?php if(file_exists(WWW_ROOT . 'img/Users/' . $currentuser['id'])): ?>
+          <?= $this->Html->image('Users/'.$currentuser['id'], array('alt' => 'Profile', 'class' => 'profileimg', 'escape' => false)) ?>
+        <?php else: ?>
+          <?= $this->Html->image('profile_img.svg', array('alt' => 'Profile', 'class' => 'profileimgdefault', 'escape' => false)) ?>
+        <?php endif; ?>
         </div>
         <div class="user">
           <?php echo $this->Html->link(

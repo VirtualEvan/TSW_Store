@@ -100,7 +100,6 @@ class ProductsController extends AppController
         $product = $this->Products->newEntity();
         if ($this->request->is('post'))
         {
-
             $file = $this->request->data['upload'];
             $extension = substr(strtolower(strrchr($file['name'], '.')), 1);
             $allowedExtensions = array('jpg', 'jpeg', 'png');
@@ -209,16 +208,15 @@ class ProductsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function search() {
-
-      $keyword = $this->request->data;
-    $keyword = $keyword["keyword"];
-    $cond = array("OR" => array(
-        "Products.name LIKE '%$keyword%'",
-        "Products.description LIKE '%$keyword%'"
-    ));
-    $products = $this->Products->find("all", array("conditions" => $cond));
-    $this->set(compact("products", "keyword"));
-    $this->render('index');
+    public function search()
+    {
+        $keyword = $this->request->data["keyword"];
+        $cond = array("OR" => array(
+            "Products.name LIKE '%$keyword%'",
+            "Products.description LIKE '%$keyword%'"
+        ));
+        $products = $this->Products->find("all", array("conditions" => $cond))->contain(['Users']);
+        $this->set(compact("products"));
+        $this->render('index');
     }
 }
