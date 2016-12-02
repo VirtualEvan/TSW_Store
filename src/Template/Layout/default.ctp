@@ -43,25 +43,8 @@ $currentuser = $this->request->session()->read('Auth.User');
     }
   ?>
   <main>
-    <header class="header">
+    <?= $this->element('header'); ?>
 
-        <?php
-            echo $this->Form->create("Products", array(
-              'url' => ['controller' => 'products', 'action' => 'search']
-            ));
-            echo $this->Form->input("keyword", array(
-                "label" => "",
-                "type" => "search",
-                "placeholder" => "Buscar...",
-                "class" => "searchbar"
-            ));
-            echo $this->Form->submit("Buscar", array(
-                "class" => "searchbutton"
-            ));
-            echo $this->Form->end();
-        ?>
-
-    </header>
 
     <?= $this->Flash->render() ?>
     <article class="maincontent">
