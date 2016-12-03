@@ -374,7 +374,7 @@ class AuthComponent extends Component
             $this->flash($this->_config['authError']);
             $this->storage()->redirectUrl($controller->request->here(false));
 
-            return $controller->redirect($this->_config['loginAction']);
+            return $controller->redirect(['controller' => 'Products', 'action' => 'index']);
         }
 
         if (!empty($this->_config['ajaxLogin'])) {

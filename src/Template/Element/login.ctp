@@ -13,7 +13,6 @@
     ?>
   </div>
   <div class="navlogin">
-    <?= $this->Flash->render('auth') ?>
     <?= $this->Form->create(null, ['templates' => ['inputContainer' => '<div class="inputdiv" >{{content}}</div>'],'url' => ['controller' => 'Users', 'action' => 'login']]) ?>
         <?= $this->Form->input('username', array('class' => 'input')) ?>
         <?= $this->Form->input('password', array('class' => 'input')) ?>
