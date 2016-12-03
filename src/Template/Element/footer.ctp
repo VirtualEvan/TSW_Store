@@ -50,7 +50,7 @@
         <div class="footercolumn">
             <ul class="footercontent usuario">
                 <li class="footertitle">
-                    <?= $currentuser['name'] ?>
+                    <?= isset($currentuser)? $currentuser['name'] : 'User' ?>
                 </li>
                 <li>
                     <?= __('Profile') ?>
