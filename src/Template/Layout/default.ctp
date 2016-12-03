@@ -20,6 +20,10 @@ $currentuser = $this->request->session()->read('Auth.User');
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?= $this->Html->meta('keywords','traepaka, onlie, store, compra venta, segunda mano'); ?>
+    <?= $this->Html->meta('description','Tienda online de compra-venta de segunda mano'); ?>
+
+
     <title>
         <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
