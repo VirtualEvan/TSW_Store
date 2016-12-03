@@ -16,87 +16,87 @@ msgstr ""
 
 #: Controller/ChatsController.php:86;114
 msgid "The chat could not be saved. Please, try again."
-msgstr ""
+msgstr "El chat no se ha podido guardar. Porfavor, inténtelo de nuevo."
 
 #: Controller/ChatsController.php:89
 msgid "A chat for this product already exists."
-msgstr ""
+msgstr "El chat para este producto ya existe."
 
 #: Controller/ChatsController.php:110
 msgid "The chat has been saved."
-msgstr ""
+msgstr "El chat ha sido guardado."
 
 #: Controller/ChatsController.php:135
 msgid "The chat has been deleted."
-msgstr ""
+msgstr "El chat ha sido borrado."
 
 #: Controller/ChatsController.php:137
 msgid "The chat could not be deleted. Please, try again."
-msgstr ""
+msgstr "El chat no se ha podido borrar. Porfavor, inténtelo de nuevo."
 
 #: Controller/MessagesController.php:72
 msgid "The message could not be sent. Please, try again."
-msgstr ""
+msgstr "El mensaje no se ha podido enviar. Porfavor, inténtelo de nuevo."
 
 #: Controller/MessagesController.php:95
 msgid "The message has been saved."
-msgstr ""
+msgstr "El mensaje ha sido guardado."
 
 #: Controller/MessagesController.php:99
 msgid "The message could not be saved. Please, try again."
-msgstr ""
+msgstr "El mensaje no se ha podido guardar. Porfavor, inténtelo de nuevo."
 
 #: Controller/MessagesController.php:119
 msgid "The message has been deleted."
-msgstr ""
+msgstr "El mensaje ha sido borrado."
 
 #: Controller/MessagesController.php:121
 msgid "The message could not be deleted. Please, try again."
-msgstr ""
+msgstr "El mensaje no se ha podido borrar. Porfavor, inténtelo de nuevo."
 
 #: Controller/ProductsController.php:124;178
 msgid "The product has been saved."
-msgstr ""
+msgstr "El producto ha sido guardado."
 
 #: Controller/ProductsController.php:128;182
 msgid "The product could not be saved. Please, try again."
-msgstr ""
+msgstr "El producto no se ha podido guardar. Porfavor, inténtelo de nuevo."
 
 #: Controller/ProductsController.php:203
 msgid "The product has been deleted."
-msgstr ""
+msgstr "El producto ha sido borrado."
 
 #: Controller/ProductsController.php:205
 msgid "The product could not be deleted. Please, try again."
-msgstr ""
+msgstr "El producto no se ha podido borrar. Porfavor, inténtelo de nuevo."
 
 #: Controller/UsersController.php:50
 msgid "Invalid username or password, try again"
-msgstr ""
+msgstr "Nombre de usuario o contraseña inválido, inténtelo de nuevo"
 
 #: Controller/UsersController.php:117
 msgid "Successfully registered."
-msgstr ""
+msgstr "Registrado con éxito."
 
 #: Controller/UsersController.php:125;172
 msgid "The user could not be saved. Please, try again."
-msgstr ""
+msgstr "El usuario no se ha podido guardar. Por favor, inténtelo de nuevo."
 
 #: Controller/UsersController.php:162
 msgid "Invalid image format."
-msgstr ""
+msgstr "Formato de imagen inválido."
 
 #: Controller/UsersController.php:166
 msgid "The user data has been modified."
-msgstr ""
+msgstr "Los datos del usuario han sido modificados."
 
 #: Controller/UsersController.php:193
 msgid "The user has been deleted."
-msgstr ""
+msgstr "El usuario ha sido borrado."
 
 #: Controller/UsersController.php:196
 msgid "The user could not be deleted. Please, try again."
-msgstr ""
+msgstr "El usuario no se ha podido borrar. Porfavor, inténtelo de nuvo."
 
 #: Template/Chats/add.ctp:3
 #: Template/Chats/edit.ctp:3
@@ -108,7 +108,7 @@ msgstr ""
 #: Template/Users/index.ctp:3;21
 #: Template/Users/view.ctp:19
 msgid "Actions"
-msgstr ""
+msgstr "Acciones"
 
 #: Template/Chats/add.ctp:4
 #: Template/Chats/edit.ctp:10
@@ -118,30 +118,30 @@ msgstr ""
 #: Template/Messages/view.ctp:8
 #: Template/Users/index.ctp:5
 msgid "List Chats"
-msgstr ""
+msgstr "Listar chats"
 
 #: Template/Chats/add.ctp:5
 #: Template/Chats/edit.ctp:11
 msgid "List Users"
-msgstr ""
+msgstr "Listar usuarios"
 
 #: Template/Chats/add.ctp:6
 #: Template/Chats/edit.ctp:12
 #: Template/Users/index.ctp:4
 msgid "New User"
-msgstr ""
+msgstr "Nuevo usuario"
 
 #: Template/Chats/add.ctp:7
 #: Template/Chats/edit.ctp:13
 #: Template/Users/index.ctp:7
 msgid "List Products"
-msgstr ""
+msgstr "Listar productos"
 
 #: Template/Chats/add.ctp:8
 #: Template/Chats/edit.ctp:14
 #: Template/Users/index.ctp:8
 msgid "New Product"
-msgstr ""
+msgstr "Nuevo Producto"
 
 #: Template/Chats/add.ctp:9
 #: Template/Chats/edit.ctp:15
@@ -149,32 +149,32 @@ msgstr ""
 #: Template/Messages/edit.ctp:10
 #: Template/Messages/view.ctp:6
 msgid "List Messages"
-msgstr ""
+msgstr "Listar mensajes"
 
 #: Template/Chats/add.ctp:10
 #: Template/Chats/edit.ctp:16
 #: Template/Messages/index.ctp:4
 #: Template/Messages/view.ctp:7
 msgid "New Message"
-msgstr ""
+msgstr "Nuevo mensaje"
 
 #: Template/Chats/add.ctp:16
 msgid "Add Chat"
-msgstr ""
+msgstr "Añadir Chat"
 
 #: Template/Chats/add.ctp:22
 #: Template/Chats/edit.ctp:28
 #: Template/Messages/add.ctp:19
 #: Template/Messages/edit.ctp:25
 msgid "Submit"
-msgstr ""
+msgstr "Envíar"
 
 #: Template/Chats/edit.ctp:5
 #: Template/Messages/edit.ctp:5
 #: Template/Messages/index.ctp:33
 #: Template/Users/index.ctp:35
 msgid "Delete"
-msgstr ""
+msgstr "Borrar"
 
 #: Template/Chats/edit.ctp:7
 #: Template/Messages/edit.ctp:7
@@ -182,132 +182,132 @@ msgstr ""
 #: Template/Messages/view.ctp:5
 #: Template/Users/index.ctp:35
 msgid "Are you sure you want to delete # {0}?"
-msgstr ""
+msgstr "Estas seguro de que quieres borrar # {0}?"
 
 #: Template/Chats/edit.ctp:22
 msgid "Edit Chat"
-msgstr ""
+msgstr "Editar Chat"
 
 #: Template/Chats/index.ctp:3
 #: Template/Element/footer.ctp:60
 #: Template/Element/navbar.ctp:67
 msgid "Chats"
-msgstr ""
+msgstr "Chats"
 
 #: Template/Chats/view.ctp:7
 msgid "Product"
-msgstr ""
+msgstr "Producto"
 
 #: Template/Chats/view.ctp:11
 #: Template/Messages/view.ctp:24
 #: Template/Products/view.ctp:18
 #: Template/Users/view.ctp:15
 msgid "Id"
-msgstr ""
+msgstr "Id"
 
 #: Template/Chats/view.ctp:15
 msgid "User Id"
-msgstr ""
+msgstr "Id de usuario"
 
 #: Template/Chats/view.ctp:56
 msgid "Send"
-msgstr ""
+msgstr "Envíar"
 
 #: Template/Element/footer.ctp:10
 msgid "© Traepaká 2016"
-msgstr ""
+msgstr "© Traepaká 2016"
 
 #: Template/Element/footer.ctp:13
 msgid "Rules"
-msgstr ""
+msgstr "Normas"
 
 #: Template/Element/footer.ctp:16
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #: Template/Element/footer.ctp:19
 msgid "Legal information"
-msgstr ""
+msgstr "Información legal"
 
 #: Template/Element/footer.ctp:22
 msgid "Cookies policy"
-msgstr ""
+msgstr "Política de cookies"
 
 #: Template/Element/footer.ctp:29
 msgid "Sections"
-msgstr ""
+msgstr "Secciones"
 
 #: Template/Element/footer.ctp:32
 msgid "Home"
-msgstr ""
+msgstr "Portada"
 
 #: Template/Element/footer.ctp:35
 msgid "Featured"
-msgstr ""
+msgstr "Destacados"
 
 #: Template/Element/footer.ctp:38
 msgid "Recent"
-msgstr ""
+msgstr "Nuevos"
 
 #: Template/Element/footer.ctp:41
 msgid "Comments"
-msgstr ""
+msgstr "Comentarios"
 
 #: Template/Element/footer.ctp:51;80
 msgid "Profile"
-msgstr ""
+msgstr "Perfil"
 
 #: Template/Element/footer.ctp:54
 msgid "New product"
-msgstr ""
+msgstr "Nuevo producto"
 
 #: Template/Element/footer.ctp:57
 #: Template/Element/navbar.ctp:59
 msgid "My products"
-msgstr ""
+msgstr "Mis productos"
 
 #: Template/Element/footer.ctp:69
 msgid "Networks"
-msgstr ""
+msgstr "Redes"
 
 #: Template/Element/footer.ctp:88;91
 #: Template/Users/index.ctp:12
 msgid "Users"
-msgstr ""
+msgstr "Usuarios"
 
 #: Template/Element/footer.ctp:92
 msgid "members"
-msgstr ""
+msgstr "miembros"
 
 #: Template/Element/footer.ctp:95
 msgid "Connected"
-msgstr ""
+msgstr "Conectados"
 
 #: Template/Element/footer.ctp:96
 msgid "online"
-msgstr ""
+msgstr "en línea"
 
 #: Template/Element/header.ctp:6
 msgid "Search..."
-msgstr ""
+msgstr "Buscar..."
 
 #: Template/Element/header.ctp:10
 msgid "Search"
-msgstr ""
+msgstr "Buscar..."
 
 #: Template/Element/login.ctp:20
 #: Template/Users/login.ctp:9
 msgid "Login"
-msgstr ""
+msgstr "Entrar"
 
 #: Template/Element/login.ctp:22
 #: Template/Users/add.ctp:7
 msgid "Register"
-msgstr ""
+msgstr "Registrarse"
 
 #: Template/Element/navbar.ctp:34;41
 msgid "Configure"
-msgstr ""
+msgstr "Configurar"
 
 #: Template/Element/navbar.ctp:51
 #: Template/Products/add.ctp:6
@@ -318,11 +318,11 @@ msgstr "Añadir producto"
 #: Template/Error/error400.ctp:36
 #: Template/Error/error500.ctp:41
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: Template/Layout/error.ctp:43
 msgid "Back"
-msgstr ""
+msgstr "Atrás"
 
 #: Template/Messages/add.ctp:6
 #: Template/Messages/edit.ctp:12
@@ -330,65 +330,65 @@ msgstr ""
 #: Template/Messages/view.ctp:9
 #: Template/Users/index.ctp:6
 msgid "New Chat"
-msgstr ""
+msgstr "Nuevo Chat"
 
 #: Template/Messages/add.ctp:12
 msgid "Add Message"
-msgstr ""
+msgstr "Añadir Mensaje"
 
 #: Template/Messages/edit.ctp:18
 #: Template/Messages/view.ctp:4
 msgid "Edit Message"
-msgstr ""
+msgstr "Editar Mensaje"
 
 #: Template/Messages/index.ctp:10
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #: Template/Messages/index.ctp:31
 #: Template/Users/index.ctp:33
 msgid "View"
-msgstr ""
+msgstr "Ver"
 
 #: Template/Messages/index.ctp:32
 #: Template/Users/index.ctp:34
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: Template/Messages/index.ctp:41
 #: Template/Users/index.ctp:43
 msgid "previous"
-msgstr ""
+msgstr "anterior"
 
 #: Template/Messages/index.ctp:43
 #: Template/Users/index.ctp:45
 msgid "next"
-msgstr ""
+msgstr "siguiente"
 
 #: Template/Messages/view.ctp:5
 msgid "Delete Message"
-msgstr ""
+msgstr "Borrar mensaje"
 
 #: Template/Messages/view.ctp:16
 msgid "Chat"
-msgstr ""
+msgstr "Chat"
 
 #: Template/Messages/view.ctp:20
 msgid "Content"
-msgstr ""
+msgstr "Contenido"
 
 #: Template/Messages/view.ctp:28
 #: Template/Products/view.ctp:26
 msgid "Created"
-msgstr ""
+msgstr "Creado"
 
 #: Template/Messages/view.ctp:32
 msgid "Sender"
-msgstr ""
+msgstr "Remitente"
 
 #: Template/Messages/view.ctp:33
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 #: Template/Messages/view.ctp:33
 msgid "No"
@@ -417,54 +417,53 @@ msgstr "Precio"
 
 #: Template/Products/view.ctp:34
 msgid "Edit Product"
-msgstr ""
+msgstr "Editar Producto"
 
 #: Template/Products/view.ctp:35
 msgid "Delete Product"
-msgstr ""
+msgstr "Borrar Producto"
 
 #: Template/Products/view.ctp:35
 #: Template/Users/view.ctp:22
 msgid "Are you sure you want to delete {0}?"
-msgstr ""
+msgstr "Estás seguro de que quieres borrar {0}?"
 
 #: Template/Products/view.ctp:44
 msgid "View Chat"
-msgstr ""
+msgstr "Ver Chat"
 
 #: Template/Products/view.ctp:54
 msgid "Start Chat"
-msgstr ""
+msgstr "Comenzar Chat"
 
 #: Template/Users/edit.ctp:7
 msgid "Edit user"
-msgstr ""
+msgstr "Editar usuario"
 
 #: Template/Users/login.ctp:5
 msgid "Please enter your username and password"
-msgstr ""
+msgstr "Porfavor, escribe tu nombre de usuario y contraseña"
 
 #: Template/Users/view.ctp:7
 msgid "Username"
-msgstr ""
+msgstr "Nombre de usuario"
 
 #: Template/Users/view.ctp:11
 msgid "Email"
-msgstr ""
+msgstr "Correo electrónico"
 
 #: Template/Users/view.ctp:21
 msgid "Edit User"
-msgstr ""
+msgstr "Editar Usuario"
 
 #: Template/Users/view.ctp:22
 msgid "Delete User"
-msgstr ""
+msgstr "Borrar Usuario"
 
 #: Template/Error/error400.ctp:37
 msgid "The requested address {0} was not found on this server."
-msgstr ""
+msgstr "La dirección pedida {0} no ha sido encontrada en este servidor."
 
 #: Template/Error/error500.ctp:39
 msgid "An Internal Error Has Occurred"
-msgstr ""
-
+msgstr "Ha ocurrido un error interno"
