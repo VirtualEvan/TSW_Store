@@ -543,6 +543,7 @@ main {
 }
 
 .chatlink:visited, .chatlink:link {
+    font-size: 25px;
     background-color: #63baf9;
     border: #2e6c99 4px solid;
     border-radius: 8px;
@@ -563,6 +564,7 @@ main {
 }
 
 .chatlink2:visited, .chatlink2:link {
+    font-size: 25px;
     background-color: #05d665;
     border: #03863F 4px solid;
     border-radius: 8px;
@@ -580,6 +582,13 @@ main {
 .chatlink2:hover {
     background-color: rgba(230, 227, 227, 1);
     color: black;
+}
+
+.userimgchats {
+  width: 35px;
+  height: 35px;
+  float: right;
+  border-radius: 50%;
 }
 
 .messagecontainer {
