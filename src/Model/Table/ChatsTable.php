@@ -81,11 +81,28 @@ class ChatsTable extends Table
         return $rules;
     }
 
-    public function isOwnedBy($chatId, $userId)
+    public function isOwnedBy($chatId, $currentuserId)
     {
-        //TODO:$productId = $chats->find()->select('product_id')->where( ['id' => $chatId] );
-        //$sellerId = $products->find()->select('user_id')->where( ['id' => $productId] );
-        return $this->exists(['id' => $chatId, 'user_id' => $userId]);
+        $chat = $this->get($chatId, ['contain' => ['Products']]);
+
+        if( ($chat->user_id == $currentuserId) || ($chat->product->user_id == $currentuserId) )
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function myChats($userId)
+    {
+        $conditions = array(
+            "OR" => array(
+                "Chats.user_id = '$userId'",
+                "Products.user_id = $userId AND Chats.product_id = Products.id"
+            )
+        );
+
+        return $this->find("all", array('contain' => array('Products' => array('conditions'=>$conditions))));
     }
 
     public function alreadyExists($productId, $userId)
