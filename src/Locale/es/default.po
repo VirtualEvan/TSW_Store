@@ -479,3 +479,8 @@ msgstr "Inglés"
 #: Template/Element/footer.ctp:42
 msgid "Spanish"
 msgstr "Español"
+
+#: Template/Element/login.ctp:18
+#: Template/Users/edit.ctp:4
+msgid "Password"
+msgstr "Contraseña"
