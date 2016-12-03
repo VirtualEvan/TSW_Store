@@ -52,6 +52,12 @@ class ProductsController extends AppController
         ];
         $products = $this->paginate($this->Products);
 
+        foreach($products as $product){
+          if(strlen($product->name)>15){
+            $product->name = substr($product->name, 0, 15)."...";
+          }
+        }
+
         $this->set(compact('products'));
         $this->set('_serialize', ['products']);
     }
