@@ -467,3 +467,11 @@ msgstr "La dirección pedida {0} no ha sido encontrada en este servidor."
 #: Template/Error/error500.ctp:39
 msgid "An Internal Error Has Occurred"
 msgstr "Ha ocurrido un error interno"
+
+#: Template/Element/footer.ctp:34
+msgid "English"
+msgstr "Inglés"
+
+#: Template/Element/footer.ctp:42
+msgid "Spanish"
+msgstr "Español"
