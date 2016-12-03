@@ -119,23 +119,4 @@ class ChatsController extends AppController
         $this->set('_serialize', ['chat']);
     }
 
-    /**
-     * Delete method
-     *
-     * @param string|null $id Chat id.
-     * @return \Cake\Network\Response|null Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function delete($id = null)
-    {
-        $this->request->allowMethod(['post', 'delete']);
-        $chat = $this->Chats->get($id);
-        if ($this->Chats->delete($chat)) {
-            $this->Flash->success(__('The chat has been deleted.'));
-        } else {
-            $this->Flash->error(__('The chat could not be deleted. Please, try again.'));
-        }
-
-        return $this->redirect(['action' => 'index']);
-    }
 }
