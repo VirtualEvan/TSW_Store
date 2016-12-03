@@ -293,7 +293,7 @@ msgstr "Buscar..."
 
 #: Template/Element/header.ctp:10
 msgid "Search"
-msgstr "Buscar..."
+msgstr "Buscar"
 
 #: Template/Element/login.ctp:20
 #: Template/Users/login.ctp:9
