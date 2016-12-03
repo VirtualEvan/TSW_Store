@@ -12,10 +12,6 @@
         <td><?= h($user->email) ?></td>
     </tr>
     <tr>
-        <th scope="row"><?= __('Id') ?></th>
-        <td><?= $this->Number->format($user->id) ?></td>
-    </tr>
-    <tr>
         <th scope="row"><?= __('Actions') ?></th>
         <td>
           <?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id],['class' => 'editbutton']) ?>
