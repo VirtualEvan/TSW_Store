@@ -16,6 +16,8 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\I18n\I18n;
+use Cake\Core\Configure;
 
 /**
  * Application Controller
@@ -71,8 +73,17 @@ class AppController extends Controller
      */
     public function beforeFilter(Event $event)
     {
-        //Empty by now
-        //$this->Auth->allow(['index', 'view', 'display']);
+        $this->Auth->allow(['setLanguage']);
+
+        if( !$this->request->session()->read('Config.language') !== NULL){
+          I18n::locale($this->request->session()->read('Config.language'));
+        }
+    }
+
+    public function setLanguage($language){
+        $this->request->session()->write('Config.language', $language);
+
+        $this->redirect($this->referer());
     }
 
     /**

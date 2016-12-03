@@ -693,6 +693,11 @@ main {
     color: white;
 }
 
+.footerlink {
+    text-decoration: none;
+    color: white;
+}
+
 .footertitle {
     color: #b3b3b3;
 }

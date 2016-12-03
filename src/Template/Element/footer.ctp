@@ -30,10 +30,20 @@
                     <?= __('Language') ?>
                 </li>
                 <li>
-                    <?= __('English') ?>
+                    <?= $this->Html->link(
+                          __('English'),
+                          array('controller' => 'App', 'action' => 'setLanguage', 'en'),
+                          array('class' => 'footerlink', 'escape' => false)
+                        )
+                    ?>
                 </li>
                 <li>
-                    <?= __('Spanish') ?>
+                  <?= $this->Html->link(
+                        __('Spanish'),
+                        array('controller' => 'App', 'action' => 'setLanguage', 'es'),
+                        array('class' => 'footerlink', 'escape' => false)
+                      )
+                  ?>
                 </li>
             </ul>
         </div>
