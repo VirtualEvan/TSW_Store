@@ -1,5 +1,6 @@
 <?php
   $currentuser = $this->request->session()->read('Auth.User');
+  use Cake\I18n\I18n;
 ?>
 
 <footer class="footer">
@@ -26,19 +27,13 @@
         <div class="footercolumn">
             <ul class="footercontent secciones">
                 <li class="footertitle">
-                    <?= __('Sections') ?>
+                    <?= __('Language') ?>
                 </li>
                 <li>
-                    <?= __('Home') ?>
+                    <?= __('English') ?>
                 </li>
                 <li>
-                    <?= __('Featured') ?>
-                </li>
-                <li>
-                    <?= __('Recent') ?>
-                </li>
-                <li>
-                    <?= __('Comments') ?>
+                    <?= __('Spanish') ?>
                 </li>
             </ul>
         </div>

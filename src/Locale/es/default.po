@@ -1,0 +1,470 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2016-12-03 15:38+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/ChatsController.php:86;114
+msgid "The chat could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ChatsController.php:89
+msgid "A chat for this product already exists."
+msgstr ""
+
+#: Controller/ChatsController.php:110
+msgid "The chat has been saved."
+msgstr ""
+
+#: Controller/ChatsController.php:135
+msgid "The chat has been deleted."
+msgstr ""
+
+#: Controller/ChatsController.php:137
+msgid "The chat could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MessagesController.php:72
+msgid "The message could not be sent. Please, try again."
+msgstr ""
+
+#: Controller/MessagesController.php:95
+msgid "The message has been saved."
+msgstr ""
+
+#: Controller/MessagesController.php:99
+msgid "The message could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MessagesController.php:119
+msgid "The message has been deleted."
+msgstr ""
+
+#: Controller/MessagesController.php:121
+msgid "The message could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ProductsController.php:124;178
+msgid "The product has been saved."
+msgstr ""
+
+#: Controller/ProductsController.php:128;182
+msgid "The product could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ProductsController.php:203
+msgid "The product has been deleted."
+msgstr ""
+
+#: Controller/ProductsController.php:205
+msgid "The product could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:50
+msgid "Invalid username or password, try again"
+msgstr ""
+
+#: Controller/UsersController.php:117
+msgid "Successfully registered."
+msgstr ""
+
+#: Controller/UsersController.php:125;172
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:162
+msgid "Invalid image format."
+msgstr ""
+
+#: Controller/UsersController.php:166
+msgid "The user data has been modified."
+msgstr ""
+
+#: Controller/UsersController.php:193
+msgid "The user has been deleted."
+msgstr ""
+
+#: Controller/UsersController.php:196
+msgid "The user could not be deleted. Please, try again."
+msgstr ""
+
+#: Template/Chats/add.ctp:3
+#: Template/Chats/edit.ctp:3
+#: Template/Messages/add.ctp:3
+#: Template/Messages/edit.ctp:3
+#: Template/Messages/index.ctp:3;19
+#: Template/Messages/view.ctp:3
+#: Template/Products/view.ctp:31
+#: Template/Users/index.ctp:3;21
+#: Template/Users/view.ctp:19
+msgid "Actions"
+msgstr ""
+
+#: Template/Chats/add.ctp:4
+#: Template/Chats/edit.ctp:10
+#: Template/Messages/add.ctp:5
+#: Template/Messages/edit.ctp:11
+#: Template/Messages/index.ctp:5
+#: Template/Messages/view.ctp:8
+#: Template/Users/index.ctp:5
+msgid "List Chats"
+msgstr ""
+
+#: Template/Chats/add.ctp:5
+#: Template/Chats/edit.ctp:11
+msgid "List Users"
+msgstr ""
+
+#: Template/Chats/add.ctp:6
+#: Template/Chats/edit.ctp:12
+#: Template/Users/index.ctp:4
+msgid "New User"
+msgstr ""
+
+#: Template/Chats/add.ctp:7
+#: Template/Chats/edit.ctp:13
+#: Template/Users/index.ctp:7
+msgid "List Products"
+msgstr ""
+
+#: Template/Chats/add.ctp:8
+#: Template/Chats/edit.ctp:14
+#: Template/Users/index.ctp:8
+msgid "New Product"
+msgstr ""
+
+#: Template/Chats/add.ctp:9
+#: Template/Chats/edit.ctp:15
+#: Template/Messages/add.ctp:4
+#: Template/Messages/edit.ctp:10
+#: Template/Messages/view.ctp:6
+msgid "List Messages"
+msgstr ""
+
+#: Template/Chats/add.ctp:10
+#: Template/Chats/edit.ctp:16
+#: Template/Messages/index.ctp:4
+#: Template/Messages/view.ctp:7
+msgid "New Message"
+msgstr ""
+
+#: Template/Chats/add.ctp:16
+msgid "Add Chat"
+msgstr ""
+
+#: Template/Chats/add.ctp:22
+#: Template/Chats/edit.ctp:28
+#: Template/Messages/add.ctp:19
+#: Template/Messages/edit.ctp:25
+msgid "Submit"
+msgstr ""
+
+#: Template/Chats/edit.ctp:5
+#: Template/Messages/edit.ctp:5
+#: Template/Messages/index.ctp:33
+#: Template/Users/index.ctp:35
+msgid "Delete"
+msgstr ""
+
+#: Template/Chats/edit.ctp:7
+#: Template/Messages/edit.ctp:7
+#: Template/Messages/index.ctp:33
+#: Template/Messages/view.ctp:5
+#: Template/Users/index.ctp:35
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Chats/edit.ctp:22
+msgid "Edit Chat"
+msgstr ""
+
+#: Template/Chats/index.ctp:3
+#: Template/Element/footer.ctp:60
+#: Template/Element/navbar.ctp:67
+msgid "Chats"
+msgstr ""
+
+#: Template/Chats/view.ctp:7
+msgid "Product"
+msgstr ""
+
+#: Template/Chats/view.ctp:11
+#: Template/Messages/view.ctp:24
+#: Template/Products/view.ctp:18
+#: Template/Users/view.ctp:15
+msgid "Id"
+msgstr ""
+
+#: Template/Chats/view.ctp:15
+msgid "User Id"
+msgstr ""
+
+#: Template/Chats/view.ctp:56
+msgid "Send"
+msgstr ""
+
+#: Template/Element/footer.ctp:10
+msgid "© Traepaká 2016"
+msgstr ""
+
+#: Template/Element/footer.ctp:13
+msgid "Rules"
+msgstr ""
+
+#: Template/Element/footer.ctp:16
+msgid "Contact"
+msgstr ""
+
+#: Template/Element/footer.ctp:19
+msgid "Legal information"
+msgstr ""
+
+#: Template/Element/footer.ctp:22
+msgid "Cookies policy"
+msgstr ""
+
+#: Template/Element/footer.ctp:29
+msgid "Sections"
+msgstr ""
+
+#: Template/Element/footer.ctp:32
+msgid "Home"
+msgstr ""
+
+#: Template/Element/footer.ctp:35
+msgid "Featured"
+msgstr ""
+
+#: Template/Element/footer.ctp:38
+msgid "Recent"
+msgstr ""
+
+#: Template/Element/footer.ctp:41
+msgid "Comments"
+msgstr ""
+
+#: Template/Element/footer.ctp:51;80
+msgid "Profile"
+msgstr ""
+
+#: Template/Element/footer.ctp:54
+msgid "New product"
+msgstr ""
+
+#: Template/Element/footer.ctp:57
+#: Template/Element/navbar.ctp:59
+msgid "My products"
+msgstr ""
+
+#: Template/Element/footer.ctp:69
+msgid "Networks"
+msgstr ""
+
+#: Template/Element/footer.ctp:88;91
+#: Template/Users/index.ctp:12
+msgid "Users"
+msgstr ""
+
+#: Template/Element/footer.ctp:92
+msgid "members"
+msgstr ""
+
+#: Template/Element/footer.ctp:95
+msgid "Connected"
+msgstr ""
+
+#: Template/Element/footer.ctp:96
+msgid "online"
+msgstr ""
+
+#: Template/Element/header.ctp:6
+msgid "Search..."
+msgstr ""
+
+#: Template/Element/header.ctp:10
+msgid "Search"
+msgstr ""
+
+#: Template/Element/login.ctp:20
+#: Template/Users/login.ctp:9
+msgid "Login"
+msgstr ""
+
+#: Template/Element/login.ctp:22
+#: Template/Users/add.ctp:7
+msgid "Register"
+msgstr ""
+
+#: Template/Element/navbar.ctp:34;41
+msgid "Configure"
+msgstr ""
+
+#: Template/Element/navbar.ctp:51
+#: Template/Products/add.ctp:6
+msgid "Add product"
+msgstr "Añadir producto"
+
+#: Template/Layout/error.ctp:35
+#: Template/Error/error400.ctp:36
+#: Template/Error/error500.ctp:41
+msgid "Error"
+msgstr ""
+
+#: Template/Layout/error.ctp:43
+msgid "Back"
+msgstr ""
+
+#: Template/Messages/add.ctp:6
+#: Template/Messages/edit.ctp:12
+#: Template/Messages/index.ctp:6
+#: Template/Messages/view.ctp:9
+#: Template/Users/index.ctp:6
+msgid "New Chat"
+msgstr ""
+
+#: Template/Messages/add.ctp:12
+msgid "Add Message"
+msgstr ""
+
+#: Template/Messages/edit.ctp:18
+#: Template/Messages/view.ctp:4
+msgid "Edit Message"
+msgstr ""
+
+#: Template/Messages/index.ctp:10
+msgid "Messages"
+msgstr ""
+
+#: Template/Messages/index.ctp:31
+#: Template/Users/index.ctp:33
+msgid "View"
+msgstr ""
+
+#: Template/Messages/index.ctp:32
+#: Template/Users/index.ctp:34
+msgid "Edit"
+msgstr ""
+
+#: Template/Messages/index.ctp:41
+#: Template/Users/index.ctp:43
+msgid "previous"
+msgstr ""
+
+#: Template/Messages/index.ctp:43
+#: Template/Users/index.ctp:45
+msgid "next"
+msgstr ""
+
+#: Template/Messages/view.ctp:5
+msgid "Delete Message"
+msgstr ""
+
+#: Template/Messages/view.ctp:16
+msgid "Chat"
+msgstr ""
+
+#: Template/Messages/view.ctp:20
+msgid "Content"
+msgstr ""
+
+#: Template/Messages/view.ctp:28
+#: Template/Products/view.ctp:26
+msgid "Created"
+msgstr ""
+
+#: Template/Messages/view.ctp:32
+msgid "Sender"
+msgstr ""
+
+#: Template/Messages/view.ctp:33
+msgid "Yes"
+msgstr ""
+
+#: Template/Messages/view.ctp:33
+msgid "No"
+msgstr "No"
+
+#: Template/Products/edit.ctp:6
+msgid "Edit product"
+msgstr "Editar producto"
+
+#: Template/Products/view.ctp:6
+#: Template/Users/view.ctp:3
+msgid "Name"
+msgstr "Nombre"
+
+#: Template/Products/view.ctp:10
+msgid "Description"
+msgstr "Descripción"
+
+#: Template/Products/view.ctp:14
+msgid "User"
+msgstr "Usuario"
+
+#: Template/Products/view.ctp:22
+msgid "Price"
+msgstr "Precio"
+
+#: Template/Products/view.ctp:34
+msgid "Edit Product"
+msgstr ""
+
+#: Template/Products/view.ctp:35
+msgid "Delete Product"
+msgstr ""
+
+#: Template/Products/view.ctp:35
+#: Template/Users/view.ctp:22
+msgid "Are you sure you want to delete {0}?"
+msgstr ""
+
+#: Template/Products/view.ctp:44
+msgid "View Chat"
+msgstr ""
+
+#: Template/Products/view.ctp:54
+msgid "Start Chat"
+msgstr ""
+
+#: Template/Users/edit.ctp:7
+msgid "Edit user"
+msgstr ""
+
+#: Template/Users/login.ctp:5
+msgid "Please enter your username and password"
+msgstr ""
+
+#: Template/Users/view.ctp:7
+msgid "Username"
+msgstr ""
+
+#: Template/Users/view.ctp:11
+msgid "Email"
+msgstr ""
+
+#: Template/Users/view.ctp:21
+msgid "Edit User"
+msgstr ""
+
+#: Template/Users/view.ctp:22
+msgid "Delete User"
+msgstr ""
+
+#: Template/Error/error400.ctp:37
+msgid "The requested address {0} was not found on this server."
+msgstr ""
+
+#: Template/Error/error500.ctp:39
+msgid "An Internal Error Has Occurred"
+msgstr ""
+
