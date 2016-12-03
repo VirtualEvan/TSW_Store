@@ -19,7 +19,6 @@ class ChatsController extends AppController
             return true;
         }
 
-        // TODO: Only the owner of the chat can view it
         if (in_array($this->request->action, ['view'])) {
             $chatId = (int)$this->request->params['pass'][0];
             if ($this->Chats->isOwnedBy($chatId, $user['id'])) {
