@@ -60,3 +60,5 @@
       </tr>
     <?php endif; ?>
 </table>
+
+  <?= $div_productimg = $this->Html->div('productimg', $this->Html->image('Products/'.h($product->image), array('alt' => 'Product', 'class' => 'productimgsize', 'escape' => false))); ?>
