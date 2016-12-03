@@ -68,12 +68,12 @@ CREATE TABLE IF NOT EXISTS `traepaka`.`chats` (
   CONSTRAINT `fk_chat_buyer`
     FOREIGN KEY (`user_id`)
     REFERENCES `traepaka`.`users` (`id`)
-    ON DELETE SET NULL
+    ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `fk_chat_product`
     FOREIGN KEY (`product_id`)
     REFERENCES `traepaka`.`products` (`id`)
-    ON DELETE SET NULL
+    ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
@@ -139,7 +139,7 @@ INSERT INTO messages (id, sender, chat_id, content, created)
 INSERT INTO messages (id, sender, chat_id, content, created)
     VALUES (4, 1, 2,'Es nuevo?', NOW());
 INSERT INTO messages (id, sender, chat_id, content, created)
-    VALUES (5, 0, 2,'Si, lo de la pantalla es un efecto que se curró Celso', NOW());
+    VALUES (5, 0, 2,'Si, lo de la pantalla es un efecto 3D', NOW());
 INSERT INTO messages (id, sender, chat_id, content, created)
     VALUES (6, 1, 3,'Hola guapa!', NOW());
 
