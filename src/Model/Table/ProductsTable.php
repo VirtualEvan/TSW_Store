@@ -67,7 +67,7 @@ class ProductsTable extends Table
             ->notEmpty('name');
 
         $validator
-            ->numeric('price')
+            ->naturalNumber('price')
             ->requirePresence('price', 'create')
             ->notEmpty('price');
 
