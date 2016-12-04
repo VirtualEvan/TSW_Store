@@ -30,6 +30,7 @@
                     <?= __('Language') ?>
                 </li>
                 <li>
+                    <?= $this->Html->image('english.png', array('alt' => 'English', 'class' => 'footerimg', 'escape' => false)) ?>
                     <?= $this->Html->link(
                           __('English'),
                           array('controller' => 'App', 'action' => 'setLanguage', 'en'),
@@ -38,6 +39,7 @@
                     ?>
                 </li>
                 <li>
+                  <?= $this->Html->image('spanish.png', array('alt' => 'Spanish', 'class' => 'footerimg', 'escape' => false)) ?>
                   <?= $this->Html->link(
                         __('Spanish'),
                         array('controller' => 'App', 'action' => 'setLanguage', 'es'),
