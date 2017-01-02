@@ -25,7 +25,7 @@ class ProductsController extends AppController
     public function isAuthorized($user)
     {
         // All registered users can add products
-        if (in_array($this->request->action, ['add', 'mine'])) {
+        if ($this->request->action === 'add') {
             return true;
         }
 
@@ -35,6 +35,11 @@ class ProductsController extends AppController
             if ($this->Products->isOwnedBy($productId, $user['id'])) {
                 return true;
             }
+        }
+
+        //My product for each owner
+        if($this->request->action === 'mine'){
+            return $this->Auth->user('id') == (int)$this->request->params['pass'][0];
         }
 
         return parent::isAuthorized($user);
@@ -73,6 +78,13 @@ class ProductsController extends AppController
             'contain' => ['Users']
         ];
         $products = $this->paginate($this->Products->findByUserId($id));
+
+        foreach($products as $product){
+          if(strlen($product->name)>15){
+            $product->name = substr($product->name, 0, 15)."...";
+          }
+        }
+
         $this->set(compact('products'));
         $this->set('_serialize', ['products']);
         $this->render('index');
