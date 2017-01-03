@@ -13,29 +13,18 @@ class MessagesController extends AppController
 
     public function isAuthorized($user)
     {
-        // All registered users can add messages
+        // All registered users can add messages in their own chats
         if ($this->request->action === 'add') {
-            return true;
+            $chatId = (int)$this->request->params['pass'][0];
+            $this->loadModel('Chats');
+            if ($this->Chats->isOwnedBy($chatId, $user['id'])) {
+                return true;
+            }
         }
 
         return parent::isAuthorized($user);
     }
 
-    /**
-     * Index method
-     *
-     * @return \Cake\Network\Response|null
-     */
-    public function index()
-    {
-        $this->paginate = [
-            'contain' => ['Chats']
-        ];
-        $messages = $this->paginate($this->Messages);
-
-        $this->set(compact('messages'));
-        $this->set('_serialize', ['messages']);
-    }
 
     /**
      * Add method
@@ -49,8 +38,17 @@ class MessagesController extends AppController
         if ($this->request->is('post')) {
             $message = $this->Messages->patchEntity($message, $this->request->data);
             $message->chat_id = $id;
+            if($this->Chats->get($id)->user_id == $this->Auth->user('id'))
+            {
+                $message->sender = 1;
+            }
+            else
+            {
+                $message->sender = 0;
+            }
+
             if ($this->Messages->save($message)) {
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'chats', 'action' => 'view', $id]);
             } else {
                 $this->Flash->error(__('The message could not be sent. Please, try again.'));
             }

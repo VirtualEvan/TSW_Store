@@ -83,4 +83,16 @@ class MessagesTable extends Table
 
         return $rules;
     }
+
+    public function isOwnedBy($chatId, $currentuserId)
+    {
+        $chat = $this->get($chatId, ['contain' => ['Products']]);
+
+        if( ($chat->user_id == $currentuserId) || ($chat->product->user_id == $currentuserId) )
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
