@@ -597,6 +597,23 @@ main {
   border-radius: 50%;
 }
 
+.userimgchatsmessages {
+  width: 35px;
+  height: 35px;
+  float: right;
+  border-radius: 50%;
+  margin-left: 3px;
+  border: 1px grey;
+}
+
+.userimgproductsview {
+  width: 35px;
+  height: 35px;
+  float: right;
+  border: 1px solid #63baf9;
+  margin-left: 3px;
+}
+
 .messagecontainer {
     display: inline-block;
     width: 100%
@@ -612,6 +629,7 @@ main {
 }
 
 .messagehour {
+    margin-top: 2px;
     font-size: 12px;
     text-align: right;
 }

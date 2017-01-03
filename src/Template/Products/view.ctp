@@ -12,7 +12,10 @@
     </tr>
     <tr>
         <th scope="row"><?= __('User') ?></th>
-        <td><?= $product->user->name ?></td>
+        <td>
+            <?= $product->user->name ?>
+            <?= $this->Html->image('Users/'.$product->user->id, array('alt' => 'Seller', 'class' => 'userimgproductsview', 'escape' => false)) ?>
+        </td>
     </tr>
     <tr>
         <th scope="row"><?= __('Id') ?></th>
