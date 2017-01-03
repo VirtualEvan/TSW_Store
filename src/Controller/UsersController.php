@@ -189,7 +189,10 @@ class UsersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
         if ($this->Users->delete($user)) {
-            unlink(WWW_ROOT . 'img/Users/' . $user->id);
+            if(file_exists(WWW_ROOT . 'img/Users/' . $user->id))
+            {
+              unlink(WWW_ROOT . 'img/Users/' . $user->id);
+            }
             $this->Auth->logout();
             $this->Flash->success(__('The user has been deleted.'));
             return $this->redirect(['controller' => 'products', 'action' => 'index']);

@@ -26,7 +26,7 @@
               <?= h($messages->content) ?>
               <div class="messagehour">
                 <?= h($messages->created) ?>
-                <?= $this->Html->image($imgLocation, array('alt' => 'Buyer', 'class' => 'userimgchatsmessages', 'escape' => false)); ?>
+                <?= $this->Html->image($imgLocation, array('alt' => 'Buyer', 'class' => 'userimgchatsmessages', 'escape' => false, 'onerror' => "this.src='".$this->Url->image('profile_img.svg')."'")); ?>
               </div>
             </div>
           </div>

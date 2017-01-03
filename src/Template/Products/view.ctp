@@ -14,7 +14,7 @@
         <th scope="row"><?= __('User') ?></th>
         <td>
             <?= $product->user->name ?>
-            <?= $this->Html->image('Users/'.$product->user->id, array('alt' => 'Seller', 'class' => 'userimgproductsview', 'escape' => false)) ?>
+            <?= $this->Html->image('Users/'.$product->user->id, array('alt' => 'Seller', 'class' => 'userimgproductsview', 'escape' => false, 'onerror' => "this.src='".$this->Url->image('profile_img.svg')."'")) ?>
         </td>
     </tr>
     <tr>
