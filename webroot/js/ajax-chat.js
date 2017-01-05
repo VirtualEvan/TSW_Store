@@ -39,6 +39,9 @@ $(document).ready(
                     {
                         update();
                         $("div.messagesview").animate({scrollTop: document.getElementsByClassName("messagesview")[0].scrollHeight});
+                    },
+                    error: function(){
+                        alert('Error');
                     }
                 });
 

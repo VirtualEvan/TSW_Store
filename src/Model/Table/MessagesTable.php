@@ -65,7 +65,8 @@ class MessagesTable extends Table
 
         $validator
             ->requirePresence('content', 'create')
-            ->notEmpty('content');
+            ->notEmpty('content')
+            ->notBlank('content');
 
         return $validator;
     }

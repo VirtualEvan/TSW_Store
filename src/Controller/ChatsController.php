@@ -68,12 +68,9 @@ class ChatsController extends AppController
       }
       else {
           $message = $this->Chats->Messages->newEntity();
-          $chat = $this->Chats->get($id, [
-              'contain' => ['Users', 'Products', 'Messages']
-          ]);
+          $chat = $this->Chats->get($id);
           $this->set('chat', $chat);
           $this->set('message',$message);
-          $this->set('_serialize', ['chat']);
       }
     }
 
