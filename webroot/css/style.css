@@ -614,9 +614,22 @@ main {
   margin-left: 3px;
 }
 
+.messagesview {
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#mc {
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .messagecontainer {
     display: inline-block;
-    width: 100%
 }
 
 .message {

@@ -1,42 +1,72 @@
 <?php
-  echo $this->Html->div('chatname',$chat->product->name);
   $currentuser = $this->request->session()->read('Auth.User');
 ?>
-      <?php if (!empty($chat->messages)): ?>
-          <?php foreach ($chat->messages as $messages):
-            if($messages->sender == 0 && $currentuser['id'] == $chat->product->user_id){
-              $messageclass = "sender";
-              $imgLocation = "Users/".$chat->product->user_id;
-            }
-            elseif($messages->sender == 1 && $currentuser['id'] == $chat->product->user_id){
-              $messageclass = "recipient";
-              $imgLocation = "Users/".$chat->user_id;
-            }
-            elseif($messages->sender == 1 && $currentuser['id'] == $chat->user_id){
-              $messageclass = "sender";
-              $imgLocation = "Users/".$chat->user_id;
-            }
-            else {
-              $messageclass = "recipient";
-              $imgLocation = "Users/".$chat->product->user_id;
-            }
-          ?>
-          <div class="messagecontainer">
-            <div class="<?= "message ".$messageclass ?>">
-              <?= h($messages->content) ?>
-              <div class="messagehour">
-                <?= h($messages->created) ?>
-                <?= $this->Html->image($imgLocation, array('alt' => 'Buyer', 'class' => 'userimgchatsmessages', 'escape' => false, 'onerror' => "this.src='".$this->Url->image('profile_img.svg')."'")); ?>
-              </div>
-            </div>
-          </div>
-      <?php
-                endforeach;
-            endif;
-      ?>
-      <div class="newmessage">
-        <?= $this->Form->create($message, ['url' => ['controller' => 'messages', 'action' => 'add', $chat->id]]); ?>
-        <?= $this->Form->textarea('content', array('label' => false, 'class' =>'messagetextarea', 'rows' => '3')); ?>
-        <?= $this->Form->button(__('Send'), array('class' =>'messagebutton')); ?>
-        <?= $this->Form->end(); ?>
+      <div class="messagesview" id="testing">
+          <div id="mc"></div>
       </div>
+      <div class="newmessage">
+          <?= $this->Form->create($message, ['templates' => ['inputContainer' => '{{content}}']]); ?>
+          <?= $this->Form->input('content', array('type'=>'text','label' => false, 'class' =>'messagetextarea', 'rows' => '3', 'autocomplete' => 'off')); ?>
+          <?= $this->Form->submit(__('Send'), array('class' =>'messagebutton', 'name' => 'submit')); ?>
+          <?= $this->Form->end(); ?>
+      </div>
+
+
+<?= $this->Html->script('jquery-3.1.1.min.js'); ?>
+
+<script type="text/javascript">
+    function update(){
+        var actualHeight = document.getElementsByClassName("messagesview")[0].scrollHeight;
+        $.ajax({
+            async: false,
+            url: ' <?= $this->Url->build(["controller" => "chats", "action" => "view", $chat->id], true) ?> ',
+            cache: false,
+            type: 'POST',
+
+            success: function (data) {
+                $('#mc').html(data);
+                if( actualHeight < document.getElementsByClassName("messagesview")[0].scrollHeight ){
+                  $("div.messagesview").animate({scrollTop: document.getElementsByClassName("messagesview")[0].scrollHeight});
+                }
+            }
+        });
+
+        setTimeout('update()', 2000);
+
+    };
+
+    $(document).ready(
+
+        $(function()
+        {
+
+            update();
+            $("div.messagesview").scrollTop(document.getElementsByClassName("messagesview")[0].scrollHeight);
+
+            $('form').on('submit',
+                function (event) {
+
+                    event.preventDefault();
+
+                    $.ajax(
+                    {
+                        url: ' <?= $this->Url->build(["controller" => "messages", "action" => "add", $chat->id], true) ?> ',
+                        type: 'POST',
+                        data: $('form').serialize(),
+                        success: function ()
+                        {
+                            update();
+                            $("div.messagesview").animate({scrollTop: document.getElementsByClassName("messagesview")[0].scrollHeight});
+                        }
+                    });
+
+                    this.reset();
+
+                }
+
+            );
+
+        })
+
+    );
+</script>

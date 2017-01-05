@@ -54,14 +54,27 @@ class ChatsController extends AppController
      */
     public function view($id = null)
     {
-        $message = $this->Chats->Messages->newEntity();
-        $chat = $this->Chats->get($id, [
-            'contain' => ['Users', 'Products', 'Messages']
-        ]);
-
-        $this->set('chat', $chat);
-        $this->set('message',$message);
-        $this->set('_serialize', ['chat']);
+      if($this->request->is('Ajax')) //Ajax Detection
+      {
+          $message = $this->Chats->Messages->newEntity();
+          $chat = $this->Chats->get($id, [
+              'contain' => ['Users', 'Products', 'Messages']
+          ]);
+          $this->set('data', $chat);
+          $this->set('message',$message);
+          $this->set('_serialize', ['data']);
+          $this->viewBuilder()->layout('ajax');
+          $this->render('refresh');
+      }
+      else {
+          $message = $this->Chats->Messages->newEntity();
+          $chat = $this->Chats->get($id, [
+              'contain' => ['Users', 'Products', 'Messages']
+          ]);
+          $this->set('chat', $chat);
+          $this->set('message',$message);
+          $this->set('_serialize', ['chat']);
+      }
     }
 
     /**

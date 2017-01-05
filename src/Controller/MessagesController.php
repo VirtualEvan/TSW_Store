@@ -47,7 +47,7 @@ class MessagesController extends AppController
                 $message->sender = 0;
             }
 
-            if ($this->Messages->save($message)) {
+            if ($this->Messages->save($message)) {die;
                 return $this->redirect(['controller' => 'chats', 'action' => 'view', $id]);
             } else {
                 $this->Flash->error(__('The message could not be sent. Please, try again.'));
