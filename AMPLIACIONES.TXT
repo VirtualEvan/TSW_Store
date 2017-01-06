@@ -1,0 +1,24 @@
+Se han añadido, o estaban desde la entrega anterior las ampliaciones:
+
+Borrar y modificar productos
+
+Modificar contraseña
+
+Foto de perfil
+(Pueden verse desde la portada una vez realizado el login, ver producto, mis chats y en cada mensaje de los chats)
+
+Chat con AJAX
+
+Categorías en los productos
+(Necesaria al menos una para la creación y edición de productos, y búsquedas a partir de la categoría y palabras que estén en el nombre o descripción del mismo)
+
+Corregidos los errores de la entrega anterior
+
+Añadido al isAuthorized
+[-0.25p] Seguridad. Para listar mis productos se recibe un id de usuario que puede el usuario cambiar a su antojo y ver los productos de otro.
+
+Añadida comprobación al isAuthorized de MessagesController y eliminado el campo hidden, ahora el emisor se determina en el controlador
+[-0.25p] Seguridad. Se permite escribir en cualquier chat al no verificar que el $id que llega a MessagesController.add(...) sea de un chat del usuario en sesión. También se puede hablar "en nombre del otro usuario del chat", ya que el valor sender que llega desde el hidden puede ser manipulado en cliente y permutarle el valor.
+
+Esteban hecho (Arreglado en tutorías)
+[-0.25p] Seguridad. Se puede ver el chat de cualquiera al no verificar que el $id que llega a ChatsController.view($id) pertenece al usuario en sesión.
