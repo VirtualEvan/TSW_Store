@@ -13,6 +13,7 @@ use Cake\ORM\Entity;
  * @property string $image
  * @property int $user_id
  * @property \Cake\I18n\Time $created
+ * @property string $category
  *
  * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\Chat[] $chats

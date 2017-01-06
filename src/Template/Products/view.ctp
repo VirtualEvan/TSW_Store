@@ -18,10 +18,6 @@
         </td>
     </tr>
     <tr>
-        <th scope="row"><?= __('Id') ?></th>
-        <td><?= $this->Number->format($product->id) ?></td>
-    </tr>
-    <tr>
         <th scope="row"><?= __('Price') ?></th>
         <td><?= $this->Number->format($product->price)."€" ?></td>
     </tr>
@@ -29,6 +25,11 @@
         <th scope="row"><?= __('Created') ?></th>
         <td><?= h($product->created) ?></td>
     </tr>
+    <tr>
+        <th scope="row"><?= __('Category') ?></th>
+        <td><?= h($product->category) ?></td>
+    </tr>
+
     <?php if (isset($currentuser)): ?>
       <tr>
           <th scope="row"><?= __('Actions') ?></th>

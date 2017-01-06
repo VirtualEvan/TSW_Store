@@ -299,8 +299,8 @@ main {
     padding-right: 0px;
     border: none;
     height: 38px;
-    width: calc(100% - 90px);
-    flex: 1 1 calc(100% - 90px);
+    width: calc(100% - 140px);
+    flex: 1 1 calc(100% - 140px);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     font-size: 18px;
@@ -324,6 +324,54 @@ main {
     color: white;
     outline: none;
     background-color: #63baf9;
+    cursor: pointer;
+}
+
+.multiselect {
+    float: left;
+    position: relative;
+    height: 40px;
+    width: 50px;
+    flex: 0 0 50px;
+    border: none;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: white;
+    background-color: #1A1616;
+}
+.selectBox {
+    height: 100%;
+    position: relative;
+}
+.selectBox select {
+    height: 100%;
+    width: 100%;
+    background-color: #1A1616;
+    color: white;
+    font-size: 18px;
+    font-family: sans-serif;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.overSelect {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+}
+#checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+    background-color: #1A1616;
+    font-size: 15px;
+    white-space: nowrap;
+    float: left;
+    padding-right: 3px;
+    padding-bottom: 3px;
+}
+#checkboxes label {
+    display: block;
+}
+#checkboxes label:hover {
 }
 
 
@@ -818,13 +866,17 @@ main {
         padding-right: 0px;
     }
     .searchbar {
-        width: calc(100% - 140px);
-        flex: 1 1 calc(100% - 140px);
+        width: calc(100% - 240px);
+        flex: 1 1 calc(100% - 240px);
     }
     .searchbutton {
         width: 130px;
-        cursor: pointer;
         flex: 0 0 130px;
+    }
+
+    .multiselect {
+        width: 100px;
+        flex: 0 0 100px;
     }
     /* MAINCONTENT */
     .maincontent {

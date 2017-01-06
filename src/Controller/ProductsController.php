@@ -137,13 +137,28 @@ class ProductsController extends AppController
             }
 
             $product->user_id = $this->Auth->user('id');
+            if( !empty($_POST['category']) )
+            {
+                $product->category = implode(",", $_POST['category']);
+                $errorMessage = __('The product could not be saved. Please, try again.');
+            }
+
+            else
+            {
+                $errorMessage = __('A category is required');
+            }
+
+            if( !isset($product->image) )
+            {
+              $errorMessage = __('A image is required');
+            }
 
             if ($this->Products->save($product)) {
                 $this->Flash->success(__('The product has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The product could not be saved. Please, try again.'));
+                $this->Flash->error($errorMessage);
             }
         }
         $users = $this->Products->Users->find('list', ['limit' => 200]);
@@ -188,6 +203,21 @@ class ProductsController extends AppController
             }
 
             $product->user_id = $this->Auth->user('id');
+            if( !empty($_POST['category']) )
+            {
+                $product->category = implode(",", $_POST['category']);
+                $errorMessage = __('The product could not be saved. Please, try again.');
+            }
+
+            else
+            {
+                $errorMessage = __('A category is required');
+            }
+
+            if( !isset($product->image) )
+            {
+              $errorMessage = __('A image is required');
+            }
 
             if ($this->Products->save($product)) {
                 if (!empty($this->request->data['upload']['name'])) {
@@ -197,7 +227,7 @@ class ProductsController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The product could not be saved. Please, try again.'));
+                $this->Flash->error($errorMessage);
             }
         }
         $users = $this->Products->Users->find('list', ['limit' => 200]);
@@ -235,6 +265,13 @@ class ProductsController extends AppController
                 "Products.name LIKE '%$keyword%'",
                 "Products.description LIKE '%$keyword%'"
             ));
+            if( !empty($_POST['category']) )
+            {
+                $cond = array_merge( $cond, ["AND"=>[]] );
+                foreach( $_POST['category'] as $cat ){
+                  array_push( $cond['AND'], "Products.category LIKE '%$cat%'" );
+                }
+            }
             $products = $this->Products->find("all", array("conditions" => $cond))->contain(['Users']);
             $this->set(compact("products"));
 

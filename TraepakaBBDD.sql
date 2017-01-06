@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS `traepaka`.`products` (
   `image` VARCHAR(45) NOT NULL,
   `user_id` INT NOT NULL,
   `created` DATETIME NOT NULL,
+  `category` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_products_user_idx` (`user_id` ASC),
   CONSTRAINT `fk_product_user`
@@ -106,20 +107,20 @@ INSERT INTO users (id, name, username, password, email)
 
 /* Then insert some products for testing: */
 /*ropa*/
-INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (1, 'Vestido chuli', 80,'Un vestidito para morir de amor','1480621976_593709.jpg',1, NOW());
+INSERT INTO products (id, name, price, description, image, user_id, created, category)
+    VALUES (1, 'Vestido chuli', 80,'Un vestidito para morir de amor','1480621976_593709.jpg',1, NOW(), 'fashion');
 /*telefono roto*/
-INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (2, 'Teléfono de uso', 100,'Lo que queda de mi último teléfono', '1480622113_163701.jpg',1, NOW());
-INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (3, 'Lámpara super moderna', 20,'Una lámpara especial para cocinas', '1480622757_468638.jpg',1, NOW());
+INSERT INTO products (id, name, price, description, image, user_id, created, category)
+    VALUES (2, 'Teléfono de uso', 100,'Lo que queda de mi último teléfono', '1480622113_163701.jpg',1, NOW(), 'utils,leisure');
+INSERT INTO products (id, name, price, description, image, user_id, created, category)
+    VALUES (3, 'Lámpara super moderna', 20,'Una lámpara especial para cocinas', '1480622757_468638.jpg',1, NOW(), 'home-appliances');
 /*algo de tia*/
-INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (4, 'Líquido verde', 30,'Quita las arrugas', '1480622951_568403.jpg',2, NOW());
-INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (5, 'Garnier FRUCTIS', 200,'Seguramente sirva para algo', '1480622955_946043.jpg',2, NOW());
-INSERT INTO products (id, name, price, description, image, user_id, created)
-    VALUES (6, 'Reloj to wapo', 1024,'Un reloj random de google imágenes', '1480623043_580867.jpg',3, NOW());
+INSERT INTO products (id, name, price, description, image, user_id, created, category)
+    VALUES (4, 'Líquido verde', 30,'Quita las arrugas', '1480622951_568403.jpg',2, NOW(), 'home,utils');
+INSERT INTO products (id, name, price, description, image, user_id, created, category)
+    VALUES (5, 'Garnier FRUCTIS', 200,'Seguramente sirva para algo', '1480622955_946043.jpg',2, NOW(), 'home,utils');
+INSERT INTO products (id, name, price, description, image, user_id, created, category)
+    VALUES (6, 'Reloj to wapo', 1024,'Un reloj random de google imágenes', '1480623043_580867.jpg',3, NOW(), 'fashion,utils');
 
 /* Then insert some chats for testing: */
 INSERT INTO chats (id, user_id, product_id)

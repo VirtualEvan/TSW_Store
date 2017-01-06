@@ -83,4 +83,14 @@ class ProductsTableTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    /**
+     * Test isOwnedBy method
+     *
+     * @return void
+     */
+    public function testIsOwnedBy()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
 }
