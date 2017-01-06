@@ -54,6 +54,14 @@ msgstr "El mensaje ha sido borrado."
 msgid "The message could not be deleted. Please, try again."
 msgstr "El mensaje no se ha podido borrar. Porfavor, inténtelo de nuevo."
 
+#: Controller/ProductsController.php:148;214
+msgid "A category is required"
+msgstr "Se necesita una categoría"
+
+#: Controller/ProductsController.php:153;219
+msgid "A image is required"
+msgstr "Se necesita una imagen"
+
 #: Controller/ProductsController.php:124;178
 msgid "The product has been saved."
 msgstr "El producto ha sido guardado."
@@ -238,7 +246,7 @@ msgid "Sections"
 msgstr "Secciones"
 
 #: Template/Element/footer.ctp:32
-msgid "Home"
+msgid "Index"
 msgstr "Portada"
 
 #: Template/Element/footer.ctp:35
@@ -290,6 +298,51 @@ msgstr "en línea"
 #: Template/Element/header.ctp:6
 msgid "Search..."
 msgstr "Buscar..."
+
+#: Template/Element/header.ctp:14
+#: Template/Products/view.ctp:29
+msgid "Category"
+msgstr "Categoría"
+
+#: Template/Element/header.ctp:21
+#: Template/Products/add.ctp:8
+#: Template/Products/edit.ctp:8
+msgid "Home"
+msgstr "Hogar"
+msgid "home"
+msgstr "hogar"
+
+#: Template/Element/header.ctp:22
+#: Template/Products/add.ctp:9
+#: Template/Products/edit.ctp:9
+msgid "Fashion"
+msgstr "Moda"
+msgid "fashion"
+msgstr "moda"
+
+#: Template/Element/header.ctp:23
+#: Template/Products/add.ctp:10
+#: Template/Products/edit.ctp:10
+msgid "Home Appliances"
+msgstr "Electrodomésticos"
+msgid "home-appliances"
+msgstr "electrodomésticos"
+
+#: Template/Element/header.ctp:24
+#: Template/Products/add.ctp:11
+#: Template/Products/edit.ctp:11
+msgid "Leisure"
+msgstr "Ocio"
+msgid "leisure"
+msgstr "ocio"
+
+#: Template/Element/header.ctp:25
+#: Template/Products/add.ctp:12
+#: Template/Products/edit.ctp:12
+msgid "Utils"
+msgstr "Útiles"
+msgid "utils"
+msgstr "útiles"
 
 #: Template/Element/header.ctp:10
 msgid "Search"

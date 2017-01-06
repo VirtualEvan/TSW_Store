@@ -103,6 +103,11 @@ class ProductsController extends AppController
             'contain' => ['Users', 'Chats']
         ]);
 
+        foreach(explode(',',$product->category) as $cat){
+          $translated[$cat] = __($cat);
+        }
+        $product->category = implode(',',$translated);
+
         $this->set('product', $product);
         $this->set('_serialize', ['product']);
     }
