@@ -273,6 +273,12 @@ class ProductsController extends AppController
                 }
             }
             $products = $this->Products->find("all", array("conditions" => $cond))->contain(['Users']);
+            foreach($products as $product){
+              if(strlen($product->name)>15){
+                $product->name = substr($product->name, 0, 15)."...";
+              }
+            }
+
             $this->set(compact("products"));
 
             $this->render('index');
